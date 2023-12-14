@@ -6,6 +6,7 @@ createApp({
         return{
             immagineAttuale:0,
             personaSingola:"",
+            messaggio:"",
             contacts: [
                 {
                     name: 'Michele',
@@ -177,6 +178,26 @@ createApp({
             this.personaSingola =this.contacts[this.immagineAttuale].messages
         //     console.log(this.immagineAttuale);
         //    console.log(this.personaSingola);
+        },
+        invioMessaggio(){
+            console.log(this.messaggio);
+           this.personaSingola.push({"message":this.messaggio,"status":"sent"})
+          this.messaggio=""
         }
     }
 }).mount("#app")
+
+
+// let ci = '10/01/2020 15:50:00'
+// let data = new Date(ci)
+// let ora = data.getHours()
+// let minuti = data.getMinutes()
+// console.log( ora+ ":" +minuti);
+// for (let i = 0; i < this.personaSingola.length; i++) {
+//     this.data= new Date(this.personaSingola[i].date)
+//     // console.log(this.data);
+//     this.ora = data.getHours()
+//     this.minuti = data.getMinutes()
+//     console.log( this.ora + ":" + this.minuti);
+    
+// }
