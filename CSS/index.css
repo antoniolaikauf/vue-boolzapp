@@ -1,0 +1,50 @@
+/* stili genrali */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.centratura{
+    display: flex;
+    align-items: center;
+}
+/* caratteristiche contenitore */
+#app,#notifica{
+    display: flex;
+}
+/* caratteristiche rubrica */
+#rubrica{
+    width: 300px;
+    height: 100vh;
+    /* debug */
+    background-color: red;
+}
+
+#proprietario, #contatti-persone li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#proprietario {
+    height: 60px;
+    background-color: grey;
+}
+
+#rubrica img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+#contatti-persone ul{
+    overflow: auto;
+}
+/* caratteristiche chat */
+#chat{
+    flex-grow: 1;
+    height: 100vh;
+    /* debug */
+    background-color: blue;
+}
