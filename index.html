@@ -17,7 +17,7 @@
         <div id="rubrica">
             <div id="proprietario">
                 <div class="centratura">
-                    <img src="img/th (2).jpg" alt="">
+                    <img src="img/th (8).jpg" alt="">
                     <span>proprietario</span>
                 </div>
                 <div>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div id="notifica">
-                <img src="img/th (2).jpg" alt="">
+                <i class="fa-solid fa-bell-slash"></i>
                 <div>
                     <div>ricevi notifiche </div>
                     <a href="#"> attiva notifiche</a>
@@ -36,42 +36,16 @@
             <div id="contatti-persone">
                 <input type="text">
                 <ul>
-                    <li>
+                    <!-- persone a cui hai scritto -->
+                    <li v-for="(contact,i) in contacts" :key="i">
                        <div class="centratura">
-                         <img src="img/th (2).jpg" alt="">
-                         <span>nome persona <br>  ultimo messaggio inviato</span>
+                         <img :src="contact.avatar" alt="contacts[i]">
+                         <span>{{contact.name}} <br>  ultimo messaggio inviato</span>
                        </div>
                        <div>
                             data
                        </div>
                     </li>
-                    <li>
-                        <div class="centratura">
-                          <img src="img/th (2).jpg" alt="">
-                          <span>nome persona <br>  ultimo messaggio inviato</span>
-                        </div>
-                        <div>
-                             data
-                        </div>
-                     </li>
-                     <li>
-                        <div class="centratura">
-                          <img src="img/th (2).jpg" alt="">
-                          <span>nome persona <br>  ultimo messaggio inviato</span>
-                        </div>
-                        <div>
-                             data
-                        </div>
-                     </li>
-                     <li>
-                        <div class="centratura">
-                          <img src="img/th (2).jpg" alt="">
-                          <span>nome persona <br>  ultimo messaggio inviato</span>
-                        </div>
-                        <div>
-                             data
-                        </div>
-                     </li>
                 </ul>
             </div>
         </div>
