@@ -12,13 +12,14 @@
 <body>
     <!-- link javascript vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <!-- inizio contenitore dell'applicazione -->
     <div id="app">
+        <!-- div con dentro tutti i contatti a cui si è scritto -->
         <div id="rubrica">
-            <div id="proprietario">
+            <div id="proprietario"> <!--dati proprietario account-->
                 <div class="centratura">
-                    <img src="img/th (8).jpg" alt="">
-                    <span>proprietario</span>
+                    <img src="img/th (8).jpg" alt="immagine proprietario account">
+                    <span>sofia</span>
                 </div>
                 <div>
                     <i class="fa-solid fa-circle-notch"></i>
@@ -26,7 +27,7 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
-            <div id="notifica">
+            <div id="notifica" class="centratura">
                <div id="notifica-disabilitata">
                  <i class="fa-solid fa-bell-slash"></i>
                </div>
@@ -35,7 +36,7 @@
                     <a href="#"> attiva notifiche</a>
                 </div>
             </div>
-            <div id="contatti-persone">
+            <div id="contatti-persone"> <!--dati delle persone a cui si è scritto-->
                 <div id="ricerca-contatto">
                     <input type="text" placeholder="cerca o inizia una nuova chat">
                 </div>
@@ -46,15 +47,16 @@
                          <img :src="contact.avatar" alt="contacts[i]">  
                          <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
                        </div>
-                       <div>
-                            data
+                       <div id="data">
+                            12:00
                        </div>
                     </li>
                 </ul>
             </div>
         </div>
-        <div id="chat">
-            <div id="persona-chatting">
+        <!-- inizio chat con persona  -->
+        <div id="chat"> 
+            <div id="persona-chatting"> <!--riferimento alla persona a cui stai scrivendo-->
                 <div class="centratura">
                     <img :src="contacts[immagineAttuale].avatar" alt="">
                     <span> {{contacts[immagineAttuale].name}} <br>  <span class="bg-messaggio">ultimo messaggio inviato</span></span>
@@ -66,7 +68,7 @@
                 </div>
             </div>
             <div id="messaggi">
-                <!-- comparsa testo chat -->
+                <!-- comparsa messaggi nella chat alla persona a cui stai scrivendo -->
                <div v-for="messaggi in contacts[immagineAttuale].messages ">
                     <span v-if="messaggi.status === 'sent'" class="messaggi-mandati">
                         {{messaggi.message}}
@@ -76,7 +78,7 @@
                     </span>
                </div>
             </div>
-            <div id="space-writing">
+            <div id="space-writing"> <!--barra per inviare i messaggi-->
                 <i class="fa-regular fa-face-smile"></i>
                 <input type="text" v-model="messaggio" @keyup.enter="invioMessaggio" placeholder="scrivi un messaggio">
                 <i class="fa-solid fa-microphone"></i>
@@ -87,3 +89,7 @@
     <script src="JS/index.js"></script>
 </body>
 </html>
+
+<!-- per domani 
+completare milestone n4 e 5 se si riesce in piu dare una controllata se si riesce ad ottimizzare qualcosa
+ -->

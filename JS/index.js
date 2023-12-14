@@ -7,6 +7,7 @@ createApp({
             immagineAttuale:0,
             personaSingola:"",
             messaggio:"",
+            // contatti dell'utente
             contacts: [
                 {
                     name: 'Michele',
@@ -173,12 +174,14 @@ createApp({
         }
     },
     methods:{
+        // funzione per prendere l'i del contatto nel tag contatti persone
         visualizzazineMessaggi(index){
             this.immagineAttuale=index
         //     console.log(this.immagineAttuale);
         },
+        // funzione per inviare un mesaggio e ottenere la risposta
         invioMessaggio(){
-            console.log(this.messaggio);
+            // console.log(this.messaggio);
             this.personaSingola =this.contacts[this.immagineAttuale].messages
             // invio messaggio dentro array messages
            this.personaSingola.push({"message":this.messaggio,"status":"sent"})
@@ -190,6 +193,8 @@ createApp({
         }
     }
 }).mount("#app")
+
+// prova per vedere se riuscivo a prendere solo l'ora dell'invio
 
 
 // let ci = '10/01/2020 15:50:00'

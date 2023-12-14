@@ -4,43 +4,13 @@
     margin: 0px;
     box-sizing: border-box;
 }
-
+/* cclasse per centrare in altzza i tag contenenti i dati delle persone */
 .centratura{
     display: flex;
     align-items: center;
 }
 
-img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    margin-right: 10px;
-}
-
-#persona-chatting i, #proprietario i{
-    color: #b0b0b0;
-    margin:0 5px;
-}
-
-#messaggi , #contatti-persone ul {
-    overflow-y:scroll;
-}
-
-.bg-messaggio{
-    color: rgba(0, 0, 0, 0.432);
-    font-size: 13px;
-}
-/* caratteristiche contenitore */
-#app,#notifica{
-    display: flex;
-}
-/* caratteristiche rubrica */
-#rubrica{
-    width: 300px;
-    height: 100vh;
-}
-
-#proprietario, #contatti-persone li, #persona-chatting{
+#proprietario, #persona-chatting{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,18 +21,40 @@ img{
     background-color:#eaeaea;
 }
 
-#messaggi {
-    height: calc(100vh - 120px);
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+/* sfondo per testo sotto dati delle persone */
+.bg-messaggio, #data{
+    color: rgba(0, 0, 0, 0.432);
+    font-size: 13px;
+}
+/* caratteristiche per i (i) di font awesome */
+#persona-chatting i, #proprietario i{
+    color: #b0b0b0;
+    margin:0 5px;
 }
 
-#contatti-persone ul {
-    height: calc(100vh - 150px);
-    overflow-y: scroll;
+#messaggi , #contatti-persone ul {
+    overflow-y:scroll;
 }
-
+/* caratteristiche contenitore */
+#app{
+    display: flex;
+}
+/* caratteristiche rubrica */
+#rubrica{
+    width: 300px;
+    height: 100vh;
+}
+/* caratteristica tag notifica */
 #notifica{
     background-color: #8edafc;
     height: 70px;
+    padding: 10px;
 }
 
 #notifica-disabilitata{
@@ -75,41 +67,37 @@ img{
     color: #9fdffb;
 }
 
-#contatti-persone li, #notifica{
-   padding: 10px;
-   border-top: 1px solid rgba(0, 0, 0, 0.547);
-}
-
 #ricerca-contatto input{
     width: 90%;
     margin: 3px 5%;
     padding: 3px;
     
 }
+
+#contatti-persone li{
+   padding: 10px;
+   border-top: 1px solid rgba(0, 0, 0, 0.547);
+   display: flex;
+   justify-content: space-between;
+}
+
+#contatti-persone ul {
+    height: calc(100vh - 162px);
+}
 /* caratteristiche chat */
 #chat{
     flex-grow: 1;
     height: 100vh;
 }
-#space-writing{
-    height: 60px;
-    background-color: #eaeaea;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+/* caratteristiche tag persona-chatting */
+#persona-chatting{
+    border-left: 1px solid rgba(0, 0, 0, 0.499);
 }
-
-#space-writing i{
-    margin: 0px 10px ;
-}
-
-#space-writing input{
-    width: 70%;
-}
-
+/* caratteristiche tag messaggi  */
 #messaggi{
     background-image: url(../img/8DYndB.webp);
     background-size: contain;
+    height: calc(100vh - 120px);
 }
 
 .messaggi-mandati,.messaggi-ricevuti{
@@ -129,7 +117,20 @@ img{
     left: 5%;
     background-color:white;
 }
+/* caratteristiche tag space writing ( per inviare il messaggio ) */
+#space-writing{
+    height: 60px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
-#persona-chatting{
-    border-left: 1px solid rgba(0, 0, 0, 0.499);
+#space-writing i{
+    margin: 0px 10px ;
+}
+
+#space-writing input{
+    width: 70%;
+    padding: 5px;
 }
