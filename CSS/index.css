@@ -9,10 +9,26 @@
     display: flex;
     align-items: center;
 }
+
 img{
     width: 50px;
     height: 50px;
     border-radius: 50px;
+    margin-right: 10px;
+}
+
+#persona-chatting i, #proprietario i{
+    color: #b0b0b0;
+    margin:0 5px;
+}
+
+#messaggi , #contatti-persone ul {
+    overflow-y:scroll;
+}
+
+.bg-messaggio{
+    color: rgba(0, 0, 0, 0.432);
+    font-size: 13px;
 }
 /* caratteristiche contenitore */
 #app,#notifica{
@@ -22,8 +38,6 @@ img{
 #rubrica{
     width: 300px;
     height: 100vh;
-    /* debug */
-    background-color: red;
 }
 
 #proprietario, #contatti-persone li, #persona-chatting{
@@ -34,23 +48,21 @@ img{
 
 #proprietario,#persona-chatting {
     height: 60px;
-    background-color: grey;
+    background-color:#eaeaea;
 }
 
 #messaggi {
     height: calc(100vh - 120px);
-    overflow: auto;
-    /* debug */
-    background-color: aqua;
 }
 
-#contatti-persone {
-    height: calc(100vh - 110px);
-    overflow: auto;
+#contatti-persone ul {
+    height: calc(100vh - 150px);
+    overflow-y: scroll;
 }
 
 #notifica{
-    background-color: rgb(116, 172, 172);
+    background-color: #8edafc;
+    height: 70px;
 }
 
 #notifica-disabilitata{
@@ -60,18 +72,28 @@ img{
     text-align: center;
     line-height: 50px;
     background-color: white;
+    color: #9fdffb;
 }
 
+#contatti-persone li, #notifica{
+   padding: 10px;
+   border-top: 1px solid rgba(0, 0, 0, 0.547);
+}
+
+#ricerca-contatto input{
+    width: 90%;
+    margin: 3px 5%;
+    padding: 3px;
+    
+}
 /* caratteristiche chat */
 #chat{
     flex-grow: 1;
     height: 100vh;
-    /* debug */
-    background-color: blue;
 }
 #space-writing{
     height: 60px;
-    background-color: grey;
+    background-color: #eaeaea;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -85,6 +107,11 @@ img{
     width: 70%;
 }
 
+#messaggi{
+    background-image: url(../img/8DYndB.webp);
+    background-size: contain;
+}
+
 .messaggi-mandati,.messaggi-ricevuti{
     padding: 10px;
     display: inline-block;
@@ -95,12 +122,14 @@ img{
 
 .messaggi-mandati{
     left: 60%;
-    /* devbug */
-    background-color: beige;
+    background-color:#d5f9ba;
 }
 
 .messaggi-ricevuti{
     left: 5%;
-    /* debug */
-    background-color: rebeccapurple;
+    background-color:white;
+}
+
+#persona-chatting{
+    border-left: 1px solid rgba(0, 0, 0, 0.499);
 }

@@ -36,13 +36,15 @@
                 </div>
             </div>
             <div id="contatti-persone">
-                <input type="text">
+                <div id="ricerca-contatto">
+                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                </div>
                 <ul>
                     <!-- persone a cui hai scritto -->
                     <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)">
                        <div class="centratura">
-                         <img :src="contact.avatar" alt="contacts[i]">
-                         <span>{{contact.name}} <br>  ultimo messaggio inviato</span>
+                         <img :src="contact.avatar" alt="contacts[i]">  
+                         <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
                        </div>
                        <div>
                             data
@@ -55,7 +57,7 @@
             <div id="persona-chatting">
                 <div class="centratura">
                     <img :src="contacts[immagineAttuale].avatar" alt="">
-                    <span> {{contacts[immagineAttuale].name}} <br>  ultimo messaggio inviato</span>
+                    <span> {{contacts[immagineAttuale].name}} <br>  <span class="bg-messaggio">ultimo messaggio inviato</span></span>
                 </div>
                 <div>
                     <i class="fa-solid fa-circle-notch"></i>
@@ -65,7 +67,7 @@
             </div>
             <div id="messaggi">
                 <!-- comparsa testo chat -->
-               <div v-for="messaggi in personaSingola ">
+               <div v-for="messaggi in contacts[immagineAttuale].messages ">
                     <span v-if="messaggi.status === 'sent'" class="messaggi-mandati">
                         {{messaggi.message}}
                     </span>
@@ -76,7 +78,7 @@
             </div>
             <div id="space-writing">
                 <i class="fa-regular fa-face-smile"></i>
-                <input type="text" v-model="messaggio" @keyup.enter="invioMessaggio">
+                <input type="text" v-model="messaggio" @keyup.enter="invioMessaggio" placeholder="scrivi un messaggio">
                 <i class="fa-solid fa-microphone"></i>
             </div>
         </div>

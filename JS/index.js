@@ -175,12 +175,11 @@ createApp({
     methods:{
         visualizzazineMessaggi(index){
             this.immagineAttuale=index
-            this.personaSingola =this.contacts[this.immagineAttuale].messages
         //     console.log(this.immagineAttuale);
-        //    console.log(this.personaSingola);
         },
         invioMessaggio(){
             console.log(this.messaggio);
+            this.personaSingola =this.contacts[this.immagineAttuale].messages
             // invio messaggio dentro array messages
            this.personaSingola.push({"message":this.messaggio,"status":"sent"})
            this.messaggio=""
