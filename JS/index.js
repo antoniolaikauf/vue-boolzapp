@@ -4,7 +4,7 @@ const {createApp}=Vue;
 createApp({
     data(){
         return{
-            // immagineAttuale:0,
+            immagineAttuale:0,
             personaSingola:"",
             contacts: [
                 {
@@ -173,8 +173,8 @@ createApp({
     },
     methods:{
         visualizzazineMessaggi(index){
-            // this.immagineAttuale=index
-            this.personaSingola =this.contacts[index].messages
+            this.immagineAttuale=index
+            this.personaSingola =this.contacts[this.immagineAttuale].messages
         //     console.log(this.immagineAttuale);
         //    console.log(this.personaSingola);
         }

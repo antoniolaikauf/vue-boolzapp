@@ -84,3 +84,23 @@ img{
 #space-writing input{
     width: 70%;
 }
+
+.messaggi-mandati,.messaggi-ricevuti{
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.messaggi-mandati{
+    left: 60%;
+    /* devbug */
+    background-color: beige;
+}
+
+.messaggi-ricevuti{
+    left: 5%;
+    /* debug */
+    background-color: rebeccapurple;
+}
