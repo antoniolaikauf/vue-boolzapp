@@ -181,8 +181,13 @@ createApp({
         },
         invioMessaggio(){
             console.log(this.messaggio);
+            // invio messaggio dentro array messages
            this.personaSingola.push({"message":this.messaggio,"status":"sent"})
-          this.messaggio=""
+           this.messaggio=""
+        //    messaggio di risposta
+           setTimeout(() => {
+            this.personaSingola.push({"message":"ok","status":"received"})
+           }, 1000);
         }
     }
 }).mount("#app")
