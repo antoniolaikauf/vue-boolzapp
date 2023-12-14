@@ -9,6 +9,11 @@
     display: flex;
     align-items: center;
 }
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
 /* caratteristiche contenitore */
 #app,#notifica{
     display: flex;
@@ -21,30 +26,46 @@
     background-color: red;
 }
 
-#proprietario, #contatti-persone li{
+#proprietario, #contatti-persone li, #persona-chatting{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#proprietario {
+#proprietario,#persona-chatting {
     height: 60px;
     background-color: grey;
 }
 
-#rubrica img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
+#messaggi {
+    height: calc(100vh - 120px);
+    /* debug */
+    background-color: aqua;
 }
 
-#contatti-persone ul{
+#contatti-persone ul, #messaggi{
     overflow: auto;
 }
+
 /* caratteristiche chat */
 #chat{
     flex-grow: 1;
     height: 100vh;
     /* debug */
     background-color: blue;
+}
+#space-writing{
+    height: 60px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#space-writing i{
+    margin: 0px 10px ;
+}
+
+#space-writing input{
+    width: 70%;
 }
