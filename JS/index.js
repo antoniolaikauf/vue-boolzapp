@@ -4,6 +4,7 @@ const {createApp}=Vue;
 createApp({
     data(){
         return{
+            immagineAttuale:0,
             contacts: [
                 {
                     name: 'Michele',
@@ -167,6 +168,13 @@ createApp({
                     ],
                 }
             ]
+        }
+    },
+    methods:{
+        visualizzazineMessaggi(index){
+            this.immagineAttuale=index
+        //     console.log(this.immagineAttuale);
+        //    console.log( this.contacts[index].messages[0].message);
         }
     }
 }).mount("#app")

@@ -27,7 +27,9 @@
                 </div>
             </div>
             <div id="notifica">
-                <i class="fa-solid fa-bell-slash"></i>
+               <div id="notifica-disabilitata">
+                 <i class="fa-solid fa-bell-slash"></i>
+               </div>
                 <div>
                     <div>ricevi notifiche </div>
                     <a href="#"> attiva notifiche</a>
@@ -37,7 +39,7 @@
                 <input type="text">
                 <ul>
                     <!-- persone a cui hai scritto -->
-                    <li v-for="(contact,i) in contacts" :key="i">
+                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)">
                        <div class="centratura">
                          <img :src="contact.avatar" alt="contacts[i]">
                          <span>{{contact.name}} <br>  ultimo messaggio inviato</span>
@@ -62,7 +64,7 @@
                 </div>
             </div>
             <div id="messaggi">
-
+                    {{this.contacts[immagineAttuale].messages[0].message}}
             </div>
             <div id="space-writing">
                 <i class="fa-regular fa-face-smile"></i>

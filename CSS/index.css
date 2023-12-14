@@ -39,12 +39,27 @@ img{
 
 #messaggi {
     height: calc(100vh - 120px);
+    overflow: auto;
     /* debug */
     background-color: aqua;
 }
 
-#contatti-persone ul, #messaggi{
+#contatti-persone {
+    height: calc(100vh - 110px);
     overflow: auto;
+}
+
+#notifica{
+    background-color: rgb(116, 172, 172);
+}
+
+#notifica-disabilitata{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: white;
 }
 
 /* caratteristiche chat */
