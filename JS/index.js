@@ -4,7 +4,7 @@ const {createApp}=Vue;
 createApp({
     data(){
         return{
-            immagineAttuale:0,
+            // immagineAttuale:0,
             personaSingola:"",
             contacts: [
                 {
@@ -173,21 +173,10 @@ createApp({
     },
     methods:{
         visualizzazineMessaggi(index){
-            this.immagineAttuale=index
+            // this.immagineAttuale=index
             this.personaSingola =this.contacts[index].messages
         //     console.log(this.immagineAttuale);
-        //    console.log( this.contacts[index].messages[0].message);
-            document.getElementById("messaggi").innerHTML="";
-           for (let i = 0; i < this.personaSingola.length; i++) {
-            console.log(this.personaSingola[i].message);
-            this.card = `
-            <div>
-             ${this.personaSingola[i].message}
-            </div>
-            `
-            document.getElementById("messaggi").innerHTML+=this.card;
-            
-           }
+        //    console.log(this.personaSingola);
         }
     }
 }).mount("#app")
