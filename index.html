@@ -75,12 +75,16 @@
                 <!-- comparsa messaggi nella chat alla persona a cui stai scrivendo -->
                <div v-for="messaggi in contacts[immagineAttuale].messages ">
                     <span v-if="messaggi.status === 'sent'" class="messaggi-mandati">
-                        {{messaggi.date}}
                         {{messaggi.message}}
+                       <div class="time">
+                        {{messaggi.date}}
+                       </div>
                     </span>
                     <span v-else class="messaggi-ricevuti" >
-                        {{messaggi.date}}
                         {{messaggi.message}}
+                        <div class="time">
+                            {{messaggi.date}}
+                        </div>
                     </span>
                </div>
             </div>

@@ -107,16 +107,23 @@ li>span{
     position: relative;
     border-radius: 10px;
     margin-top: 20px;
+    width: 350px;
 }
 
 .messaggi-mandati{
-    left: 60%;
+    left: 55%;
     background-color:#d5f9ba;
 }
 
 .messaggi-ricevuti{
     left: 5%;
     background-color:white;
+}
+
+.time{
+    font-size: 13px;
+    text-align: end;
+    margin-top: 4px;
 }
 /* caratteristiche tag space writing ( per inviare il messaggio ) */
 #space-writing{

@@ -197,13 +197,13 @@ createApp({
            this.messaggio=""
         //    messaggio di risposta
            setTimeout(() => {
-            this.personaSingola.push({"message":"ok","status":"received"})
+            this.personaSingola.push({"message":"ok","status":"received", "date":now.c.hour +":" + now.c.minute})
            }, 1000);
         },
         autocomplete(nomeRicerca){
-          const reg = new RegExp(nomeRicerca);
+        //   const reg = new RegExp(nomeRicerca);
             for (let i = 0; i < this.contacts.length; i++) {
-                if (!this.contacts[i].name.match(reg) ) {
+                if (!this.contacts[i].name.match(nomeRicerca) ) {
                     // this.nomeRicercato.push(this.contacts[i].name)
                     this.contacts[i].visible=false
                  }else{
