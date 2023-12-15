@@ -6,13 +6,10 @@ createApp({
     data(){
         return{
             immagineAttuale:0,
-            personaSingola:"",
             messaggio:"",
             ricerca:"",
+            personaSingola:"",
             // contatti dell'utente
-            arrayNomi:[],
-            nuovo:"",
-            nomeRicercato:[],
             contacts: [
                 {
                     name: 'Michele',
@@ -188,8 +185,15 @@ createApp({
         invioMessaggio(){
             // console.log(this.messaggio);
             this.personaSingola =this.contacts[this.immagineAttuale].messages
+
+
+            const now = DateTime.now();
+
+            // console.log(now.c.hour);
+            // console.log(now.c.minute);
+
             // invio messaggio dentro array messages
-           this.personaSingola.push({"message":this.messaggio,"status":"sent"})
+           this.personaSingola.push({"message":this.messaggio,"status":"sent", "date":now.c.hour +":" + now.c.minute })
            this.messaggio=""
         //    messaggio di risposta
            setTimeout(() => {
@@ -207,26 +211,22 @@ createApp({
                  }
             }
             // console.log(this.nomeRicercato);
-            
-
         }
 
-    }
+    },
+    mounted(){
+             for (let i = 0; i < this.contacts.length; i++) {
+                this.personaSingola=this.contacts[i].messages;
+                for (let i = 0; i < this.personaSingola.length; i++) {
+                this.data= new Date(this.personaSingola[i].date)
+                // console.log(this.data);
+                this.ora = this.data.getHours()
+                this.minuti = this.data.getMinutes()
+                    this.personaSingola[i].date=this.ora + ":" + this.minuti
+                // console.log(this.bla[i].date);
+                    
+                }
+            }
+    },
+
 }).mount("#app")
-
-// prova per vedere se riuscivo a prendere solo l'ora dell'invio
-
-
-// let ci = '10/01/2020 15:50:00'
-// let data = new Date(ci)
-// let ora = data.getHours()
-// let minuti = data.getMinutes()
-// console.log( ora+ ":" +minuti);
-// for (let i = 0; i < this.personaSingola.length; i++) {
-//     this.data= new Date(this.personaSingola[i].date)
-//     // console.log(this.data);
-//     this.ora = data.getHours()
-//     this.minuti = data.getMinutes()
-//     console.log( this.ora + ":" + this.minuti);
-    
-// }

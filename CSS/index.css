@@ -74,15 +74,16 @@ img{
     
 }
 
-#contatti-persone li{
-   padding: 10px;
-   border-top: 1px solid rgba(0, 0, 0, 0.547);
-   display: flex;
-   justify-content: space-between;
-}
-
 #contatti-persone ul {
     height: calc(100vh - 162px);
+}
+
+li>span{
+    border-top: 1px solid rgba(0, 0, 0, 0.547);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 /* caratteristiche chat */
 #chat{

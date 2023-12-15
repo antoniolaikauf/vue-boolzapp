@@ -41,10 +41,11 @@
                 <div id="ricerca-contatto">
                     <input type="text" placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyup="autocomplete(ricerca)">
                 </div>
-                <ul id="ciaoo">
+
+                <ul>
                     <!-- persone a cui hai scritto -->
                     <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)">
-                       <span v-if="contact.visible === true ">
+                       <span v-if="contact.visible" >
                          <div class="centratura">
                             <img :src="contact.avatar" alt="contacts[i]">  
                             <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
@@ -74,9 +75,11 @@
                 <!-- comparsa messaggi nella chat alla persona a cui stai scrivendo -->
                <div v-for="messaggi in contacts[immagineAttuale].messages ">
                     <span v-if="messaggi.status === 'sent'" class="messaggi-mandati">
+                        {{messaggi.date}}
                         {{messaggi.message}}
                     </span>
                     <span v-else class="messaggi-ricevuti" >
+                        {{messaggi.date}}
                         {{messaggi.message}}
                     </span>
                </div>
@@ -87,9 +90,6 @@
                 <i class="fa-solid fa-microphone"></i>
             </div>
         </div>
-        <div v-for="nome in nomeRicercato">
-            {{nome}}
-       </div>
     </div>
     <!-- link javascript -->
     <script src="JS/index.js"></script>
