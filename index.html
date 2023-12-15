@@ -10,6 +10,7 @@
     <title>boolzapp</title>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- link javascript vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- inizio contenitore dell'applicazione -->
@@ -38,9 +39,9 @@
             </div>
             <div id="contatti-persone"> <!--dati delle persone a cui si è scritto-->
                 <div id="ricerca-contatto">
-                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                    <input type="text" placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyup="autocomplete(ricerca)">
                 </div>
-                <ul>
+                <ul id="ciaoo">
                     <!-- persone a cui hai scritto -->
                     <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)">
                        <div class="centratura">
@@ -58,7 +59,7 @@
         <div id="chat"> 
             <div id="persona-chatting"> <!--riferimento alla persona a cui stai scrivendo-->
                 <div class="centratura">
-                    <img :src="contacts[immagineAttuale].avatar" alt="">
+                    <img :src="contacts[immagineAttuale].avatar" alt="contacts[immagineAttuale].avatar">
                     <span> {{contacts[immagineAttuale].name}} <br>  <span class="bg-messaggio">ultimo messaggio inviato</span></span>
                 </div>
                 <div>
@@ -84,11 +85,16 @@
                 <i class="fa-solid fa-microphone"></i>
             </div>
         </div>
+        <div v-for="nome in nomeRicercato">
+            {{nome}}
+       </div>
     </div>
     <!-- link javascript -->
     <script src="JS/index.js"></script>
 </body>
 </html>
+
+
 
 <!-- per domani 
 completare milestone n4 e 5 se si riesce in piu dare una controllata se si riesce ad ottimizzare qualcosa

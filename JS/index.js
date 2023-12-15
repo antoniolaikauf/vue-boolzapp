@@ -1,5 +1,6 @@
 
 const {createApp}=Vue;
+const { DateTime }= luxon;
 
 createApp({
     data(){
@@ -7,7 +8,11 @@ createApp({
             immagineAttuale:0,
             personaSingola:"",
             messaggio:"",
+            ricerca:"",
             // contatti dell'utente
+            arrayNomi:[],
+            nuovo:"",
+            nomeRicercato:[],
             contacts: [
                 {
                     name: 'Michele',
@@ -190,7 +195,26 @@ createApp({
            setTimeout(() => {
             this.personaSingola.push({"message":"ok","status":"received"})
            }, 1000);
+        },
+        autocomplete(nomeRicerca){
+           for (let i = 0; i < this.contacts.length; i++) {
+            this.arrayNomi.push(this.contacts[i].name)
+           }
+        //    console.log(this.arrayNomi);
+
+        const reg = new RegExp(nomeRicerca);
+        if(this.ricerca === "" ) return this.nomeRicercato=[]
+    
+        this.nomeRicercato=[];
+        this.arrayNomi.filter((nome)=>{
+            if (nome.match(reg) && !this.nomeRicercato.includes(nome)) {
+               this.nomeRicercato.push(nome)
+            } 
+            
+        });
+        
         }
+
     }
 }).mount("#app")
 
@@ -210,3 +234,10 @@ createApp({
 //     console.log( this.ora + ":" + this.minuti);
     
 // }
+
+
+
+// riga 201
+
+// {"name":this.contacts[i].name, "avatra":this.contacts[i].avatar}
+
