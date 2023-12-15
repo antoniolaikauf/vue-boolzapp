@@ -215,6 +215,7 @@ createApp({
 
     },
     mounted(){
+        // cambio del valore dentro contacts data con scritto solo ore e minuti
              for (let i = 0; i < this.contacts.length; i++) {
                 this.personaSingola=this.contacts[i].messages;
                 for (let i = 0; i < this.personaSingola.length; i++) {
@@ -230,3 +231,6 @@ createApp({
     },
 
 }).mount("#app")
+
+// Il metodo match() di JavaScript mi permette di cercare delle corrispondenze
+//  in una stringa tramite una espressione regolare.

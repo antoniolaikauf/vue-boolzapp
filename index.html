@@ -10,6 +10,7 @@
     <title>boolzapp</title>
 </head>
 <body>
+    <!-- link lunox per prendere ora -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- link javascript vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -63,7 +64,7 @@
             <div id="persona-chatting"> <!--riferimento alla persona a cui stai scrivendo-->
                 <div class="centratura">
                     <img :src="contacts[immagineAttuale].avatar" alt="contacts[immagineAttuale].avatar">
-                    <span> {{contacts[immagineAttuale].name}} <br>  <span class="bg-messaggio">ultimo messaggio inviato</span></span>
+                    <span> {{contacts[immagineAttuale].name}} <br>  <span class="bg-messaggio">ultimo messaggio inviato 12:00</span></span>
                 </div>
                 <div>
                     <i class="fa-solid fa-circle-notch"></i>
@@ -99,9 +100,3 @@
     <script src="JS/index.js"></script>
 </body>
 </html>
-
-
-
-<!-- per domani 
-completare milestone n4 e 5 se si riesce in piu dare una controllata se si riesce ad ottimizzare qualcosa
- -->
