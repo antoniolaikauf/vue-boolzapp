@@ -199,7 +199,7 @@ createApp({
            }, 1000);
         },
         autocomplete(nomeRicerca){
-           let elementi= document.getElementsByClassName("li")
+           let elementi= document.getElementsByClassName("card")
             for (let i = 0; i < this.contacts.length; i++) {
                 // const reg = new RegExp(nomeRicerca);
                 if (!this.contacts[i].name.match(nomeRicerca) ) {
@@ -224,7 +224,7 @@ createApp({
                     let orarioInvio=now.substr(10 );
                     orarioInvio=orarioInvio.substr(0,6);
                     personaSingola[y].time=orarioInvio
-                    console.log(personaSingola[y]);
+                    // console.log(personaSingola[y]);
 
                     }
             }
@@ -234,5 +234,3 @@ createApp({
 
 // Il metodo match() di JavaScript mi permette di cercare delle corrispondenze
 //  in una stringa tramite una espressione regolare.
-
-

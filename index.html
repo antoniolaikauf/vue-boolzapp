@@ -43,9 +43,9 @@
                     <input type="text" placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyup="autocomplete(ricerca)">
                 </div>
 
-                <ul>
+                <ul>  
                     <!-- persone a cui hai scritto -->
-                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="li" >
+                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="card" >
                        <span v-if="contact.visible">
                          <div class="centratura">
                             <img :src="contact.avatar" alt="contacts[i]">  
@@ -101,4 +101,4 @@
 </body>
 </html>
 
-<!-- sistemare la lista per quando riprendere e chiedere cosa  faccia regexp chiedere se va bene la cosa della lista con display-->
+<!--  chiedere cosa  faccia regexp chiedere se va bene la cosa della lista con display-->
