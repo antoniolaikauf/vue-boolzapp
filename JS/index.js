@@ -218,13 +218,17 @@ createApp({
         // cambio del valore dentro contacts data con scritto solo ore e minuti
              for (let i = 0; i < this.contacts.length; i++) {
                 this.personaSingola=this.contacts[i].messages;
-                for (let i = 0; i < this.personaSingola.length; i++) {
-                this.data= new Date(this.personaSingola[i].date)
-                // console.log(this.data);
-                this.ora = this.data.getHours()
-                this.minuti = this.data.getMinutes()
-                    this.personaSingola[i].date=this.ora + ":" + this.minuti
+                // console.log(this.personaSingola);
+                for (let y = 0; y < this.personaSingola.length; y++) {
+                this.now= new Date(this.personaSingola[y].date)
+                console.log(this.data);
+                // const ciao= new Date(this.personaSingola[y].date);
+                // console.log(ciao);
+                this.ora = this.now.getHours()
+                this.minuti = this.now.getMinutes()
+                    this.personaSingola[y].date=this.ora + ":" + this.minuti
                 // console.log(this.bla[i].date);
+                // this.personaSingola[y].date="jjfffkfk"
                     
                 }
             }
@@ -234,3 +238,4 @@ createApp({
 
 // Il metodo match() di JavaScript mi permette di cercare delle corrispondenze
 //  in una stringa tramite una espressione regolare.
+
