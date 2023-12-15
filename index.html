@@ -45,7 +45,7 @@
 
                 <ul>  
                     <!-- persone a cui hai scritto -->
-                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="card" >
+                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="card">
                        <span v-if="contact.visible">
                          <div class="centratura">
                             <img :src="contact.avatar" alt="contacts[i]">  
@@ -101,4 +101,4 @@
 </body>
 </html>
 
-<!--  chiedere cosa  faccia regexp chiedere se va bene la cosa della lista con display-->
+<!--  chiedere cosa  faccia regexp chiedere se va bene la cosa della lista con display aggiungere la caratteristica che la persona che è selezzionata abbia lo sfondo grigio-->

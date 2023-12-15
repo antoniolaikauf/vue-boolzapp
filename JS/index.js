@@ -178,7 +178,7 @@ createApp({
     methods:{
         // funzione per prendere l'i del contatto nel tag contatti persone
         visualizzazineMessaggi(index){
-            this.immagineAttuale=index
+            this.immagineAttuale=index 
         },
         // funzione per inviare un mesaggio e ottenere la risposta
         invioMessaggio(){
@@ -202,12 +202,12 @@ createApp({
            let elementi= document.getElementsByClassName("card")
             for (let i = 0; i < this.contacts.length; i++) {
                 // const reg = new RegExp(nomeRicerca);
-                if (!this.contacts[i].name.match(nomeRicerca) ) {
-                    this.contacts[i].visible=false
-                   elementi[i].classList.add("scompari")
-                 }else{
+                if (this.contacts[i].name.match(nomeRicerca) ) {
                     this.contacts[i].visible=true
-                    elementi[i].classList.remove("scompari")
+                   elementi[i].classList.remove("scompari")
+                 }else{
+                    this.contacts[i].visible=false
+                    elementi[i].classList.add("scompari")
                  }
             }
         }
@@ -228,6 +228,8 @@ createApp({
 
                     }
             }
+
+
     },
 
 }).mount("#app")
