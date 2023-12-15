@@ -197,22 +197,18 @@ createApp({
            }, 1000);
         },
         autocomplete(nomeRicerca){
-           for (let i = 0; i < this.contacts.length; i++) {
-            this.arrayNomi.push(this.contacts[i].name)
-           }
-        //    console.log(this.arrayNomi);
-
-        const reg = new RegExp(nomeRicerca);
-        if(this.ricerca === "" ) return this.nomeRicercato=[]
-    
-        this.nomeRicercato=[];
-        this.arrayNomi.filter((nome)=>{
-            if (nome.match(reg) && !this.nomeRicercato.includes(nome)) {
-               this.nomeRicercato.push(nome)
-            } 
+          const reg = new RegExp(nomeRicerca);
+            for (let i = 0; i < this.contacts.length; i++) {
+                if (!this.contacts[i].name.match(reg) ) {
+                    // this.nomeRicercato.push(this.contacts[i].name)
+                    this.contacts[i].visible=false
+                 }else{
+                    this.contacts[i].visible=true
+                 }
+            }
+            // console.log(this.nomeRicercato);
             
-        });
-        
+
         }
 
     }
@@ -234,10 +230,3 @@ createApp({
 //     console.log( this.ora + ":" + this.minuti);
     
 // }
-
-
-
-// riga 201
-
-// {"name":this.contacts[i].name, "avatra":this.contacts[i].avatar}
-

@@ -44,13 +44,15 @@
                 <ul id="ciaoo">
                     <!-- persone a cui hai scritto -->
                     <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)">
-                       <div class="centratura">
-                         <img :src="contact.avatar" alt="contacts[i]">  
-                         <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
-                       </div>
-                       <div id="data">
-                            12:00
-                       </div>
+                       <span v-if="contact.visible === true ">
+                         <div class="centratura">
+                            <img :src="contact.avatar" alt="contacts[i]">  
+                            <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
+                          </div>
+                          <div id="data">
+                               12:00
+                          </div>
+                       </span>
                     </li>
                 </ul>
             </div>
