@@ -193,11 +193,11 @@ createApp({
             // console.log(now.c.minute);
 
             // invio messaggio dentro array messages
-           this.personaSingola.push({"message":this.messaggio,"status":"sent", "date":now.c.hour +":" + now.c.minute })
+           this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":now.c.hour +":" + now.c.minute })
            this.messaggio=""
         //    messaggio di risposta
            setTimeout(() => {
-            this.personaSingola.push({"message":"ok","status":"received", "date":now.c.hour +":" + now.c.minute})
+            this.personaSingola.push({"message":"ok","status":"received", "time":now.c.hour +":" + now.c.minute})
            }, 1000);
         },
         autocomplete(nomeRicerca){
@@ -219,18 +219,17 @@ createApp({
              for (let i = 0; i < this.contacts.length; i++) {
                 this.personaSingola=this.contacts[i].messages;
                 // console.log(this.personaSingola);
-                for (let y = 0; y < this.personaSingola.length; y++) {
-                this.now= new Date(this.personaSingola[y].date)
-                console.log(this.data);
-                // const ciao= new Date(this.personaSingola[y].date);
-                // console.log(ciao);
-                this.ora = this.now.getHours()
-                this.minuti = this.now.getMinutes()
-                    this.personaSingola[y].date=this.ora + ":" + this.minuti
-                // console.log(this.bla[i].date);
-                // this.personaSingola[y].date="jjfffkfk"
-                    
-                }
+                    for (let y = 0; y < this.personaSingola.length; y++) {
+                        // creazione della nuova chiave e messa dentro all'oggetto personaSingola
+                    let now= this.personaSingola[y].date
+                    // console.log(now);
+                    let orarioInvio=now.substr(10 );
+                    orarioInvio=orarioInvio.substr(0,6);
+                    // console.log(this.orarioInvio);
+                    this.personaSingola[y].time=orarioInvio
+                    console.log(this.personaSingola[y].time);
+
+                    }
             }
     },
 
@@ -238,4 +237,5 @@ createApp({
 
 // Il metodo match() di JavaScript mi permette di cercare delle corrispondenze
 //  in una stringa tramite una espressione regolare.
+
 
