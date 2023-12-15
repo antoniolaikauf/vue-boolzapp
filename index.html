@@ -45,8 +45,8 @@
 
                 <ul>
                     <!-- persone a cui hai scritto -->
-                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)">
-                       <span v-if="contact.visible" >
+                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="li" >
+                       <span v-if="contact.visible">
                          <div class="centratura">
                             <img :src="contact.avatar" alt="contacts[i]">  
                             <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
@@ -101,4 +101,4 @@
 </body>
 </html>
 
-<!-- sistemare la lista per quando riprendere e chiedere cosa  faccia regexp-->
+<!-- sistemare la lista per quando riprendere e chiedere cosa  faccia regexp chiedere se va bene la cosa della lista con display-->

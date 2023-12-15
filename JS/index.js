@@ -199,12 +199,15 @@ createApp({
            }, 1000);
         },
         autocomplete(nomeRicerca){
+           let elementi= document.getElementsByClassName("li")
             for (let i = 0; i < this.contacts.length; i++) {
                 // const reg = new RegExp(nomeRicerca);
                 if (!this.contacts[i].name.match(nomeRicerca) ) {
                     this.contacts[i].visible=false
+                   elementi[i].classList.add("scompari")
                  }else{
                     this.contacts[i].visible=true
+                    elementi[i].classList.remove("scompari")
                  }
             }
         }
@@ -213,15 +216,15 @@ createApp({
     mounted(){
         // cambio del valore dentro contacts data con scritto solo ore e minuti
              for (let i = 0; i < this.contacts.length; i++) {
-                this.personaSingola=this.contacts[i].messages;
+                let personaSingola=this.contacts[i].messages;
                 // console.log(this.personaSingola);
-                    for (let y = 0; y < this.personaSingola.length; y++) {
+                    for (let y = 0; y < personaSingola.length; y++) {
                         // creazione della nuova chiave e messa dentro all'oggetto personaSingola
-                    let now= this.personaSingola[y].date
+                    let now= personaSingola[y].date
                     let orarioInvio=now.substr(10 );
                     orarioInvio=orarioInvio.substr(0,6);
-                    this.personaSingola[y].time=orarioInvio
-                    console.log(this.personaSingola[y].time);
+                    personaSingola[y].time=orarioInvio
+                    console.log(personaSingola[y]);
 
                     }
             }
