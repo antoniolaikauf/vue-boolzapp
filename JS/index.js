@@ -179,11 +179,9 @@ createApp({
         // funzione per prendere l'i del contatto nel tag contatti persone
         visualizzazineMessaggi(index){
             this.immagineAttuale=index
-        //     console.log(this.immagineAttuale);
         },
         // funzione per inviare un mesaggio e ottenere la risposta
         invioMessaggio(){
-            // console.log(this.messaggio);
             this.personaSingola =this.contacts[this.immagineAttuale].messages
 
 
@@ -201,16 +199,14 @@ createApp({
            }, 1000);
         },
         autocomplete(nomeRicerca){
-        //   const reg = new RegExp(nomeRicerca);
             for (let i = 0; i < this.contacts.length; i++) {
+                // const reg = new RegExp(nomeRicerca);
                 if (!this.contacts[i].name.match(nomeRicerca) ) {
-                    // this.nomeRicercato.push(this.contacts[i].name)
                     this.contacts[i].visible=false
                  }else{
                     this.contacts[i].visible=true
                  }
             }
-            // console.log(this.nomeRicercato);
         }
 
     },
@@ -222,10 +218,8 @@ createApp({
                     for (let y = 0; y < this.personaSingola.length; y++) {
                         // creazione della nuova chiave e messa dentro all'oggetto personaSingola
                     let now= this.personaSingola[y].date
-                    // console.log(now);
                     let orarioInvio=now.substr(10 );
                     orarioInvio=orarioInvio.substr(0,6);
-                    // console.log(this.orarioInvio);
                     this.personaSingola[y].time=orarioInvio
                     console.log(this.personaSingola[y].time);
 
