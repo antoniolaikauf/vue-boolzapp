@@ -19,108 +19,160 @@
     <!-- link javascript vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- inizio contenitore dell'applicazione -->
+
+
     <div id="app">
-        <!-- div con dentro tutti i contatti a cui si è scritto -->
-        <div id="rubrica">
-            <div id="proprietario"> <!--dati proprietario account-->
-                <div class="centratura">
-                    <img src="img/th (9).jpg" alt="immagine proprietario account">
-                    <span>sofia</span>
-                </div>
-                <div>
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-folder"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
-            </div>
-            <div id="notifica" class="centratura">
-               <div id="notifica-disabilitata">
-                 <i class="fa-solid fa-bell-slash"></i>
-               </div>
-                <div>
-                    <div>ricevi notifiche </div>
-                    <a href="#"> attiva notifiche</a>
-                </div>
-            </div>
-            <div id="contatti-persone"> <!--dati delle persone a cui si è scritto-->
-                <div id="ricerca-contatto">
-                    <input type="text" placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyup="autocomplete(ricerca)">
-                </div>
-
-                <ul>  
-                    <!-- persone a cui hai scritto -->
-                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="card" >
-                        <span v-if="contact.visible=== true" class="active">
-                            <div class="centratura">
-                               <img :src="contact.avatar" alt="contacts[i]" >  
-                               <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
-                             </div>
-                             <div id="data">
-                              12:00
-                             </div>
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- inizio chat con persona  -->
-        <div id="chat"> 
-            <div id="persona-chatting"> <!--riferimento alla persona a cui stai scrivendo-->
-                <div class="centratura">
-                    <img :src="contacts[immagineAttuale].avatar" alt="contacts[immagineAttuale].avatar">
-                    <span> {{contacts[immagineAttuale].name}} <br>  <span class="bg-messaggio"></span>  {{contacts[immagineAttuale].scrittura}}</span>
-                </div>
-                <div>
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-folder"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                    <div id="menu-scelta">
-                       <div @click="deleteMessage(immagineAttuale)">
-                            elimina messaggi
-                       </div>
-                       <div @click="deleteChat(immagineAttuale)">
-                        elimina chat
-                       </div>
-                    </div>
-                </div>
-            </div>
-            <div id="messaggi">
-                <!-- comparsa messaggi nella chat alla persona a cui stai scrivendo -->
-               <div v-for="messaggi in contacts[immagineAttuale].messages ">
-                    <span v-if="messaggi.status === 'sent'" class="messaggi-mandati">
-                        {{messaggi.message}}
-                       <div class="time">
-                        {{messaggi.time}}
-                       </div>
-                    </span>
-                    <span v-else class="messaggi-ricevuti" >
-                        {{messaggi.message}}
-                        <div class="time">
-                            {{messaggi.time}}
+        <div class="container">
+            <!-- div con dentro tutti i contatti a cui si è scritto -->
+           <div class="row">
+                <div class="col-4 p-0">
+                    <!-- nav bar della rubrica dell'accaount della persona -->
+                   <div class="col-12">
+                        <nav class="navbar navbar-expand-sm navbar-light bg-light ">
+                            <div class="container-fluid">
+                                <img src="img/th (9).jpg" alt="">
+                                <span>
+                                    sofia
+                                </span>
+                                <div class="collapse navbar-collapse  justify-content-end" id="navbarNav">
+                                    <ul class="navbar-nav ">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-folder"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">  <i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                   </div>
+                   <!-- notifiche -->
+                   <div class="col-12">
+                        <div class="card rounded-0">
+                            <div class="card-body d-flex py-2">
+                                <div id="notifica-disabilitata">
+                                    <i class="fa-solid fa-bell-slash"></i>
+                                </div>
+                                <div>
+                                    <div>ricevi notifiche </div>
+                                    <a href="#"> attiva notifiche</a>
+                                </div>
+                            </div>
                         </div>
-                    </span>
-               </div>
-            </div>
-            <div id="space-writing"> <!--barra per inviare i messaggi-->
-                <i class="fa-regular fa-face-smile"></i>
-                <input type="text" v-model="messaggio" @keyup.enter="invioMessaggio" placeholder="scrivi un messaggio">
-                <div v-if="messaggio === ''">
-                    <i class="fa-solid fa-microphone"></i>
+                   </div>
+                   <div class="col-12">
+                        <div class="input-group p-1 bg-light">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyup="autocomplete(ricerca)" type="text" class="form-control " aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        </div>
+                   </div>
+                   <div class="display-overflow">
+                        <div class="col-12">
+                            <ul class="list-group">
+                                <li class="list-group-item cards rounded-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" >
+                                    <span v-if="contact.visible=== true">
+                                        <div class="centratura">
+                                            <img :src="contact.avatar" alt="contacts[i]" >  
+                                            <div> {{contact.name}} <br><span class="informazioni">ultimo messaggio inviato</span></div>
+                                        </div>
+                                        <div class="informazioni">
+                                           <!-- {{contact.messages[messages.length].message}} -->
+                                           12:00
+                                        </div>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                   </div>
                 </div>
-                <div v-else @click="invioMessaggio">
-                    <i class="fa-solid fa-plane"></i>
+                <!-- inizio chat con persona  -->
+                <div class="col-8 p-0"> 
+                    <div class="col-12 border-start border-dark">
+                        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                            <div class="container-fluid">
+                                <a class="navbar-brand py-0 d-flex fs-6" href="#">
+                                    <img :src="contacts[immagineAttuale].avatar" alt="contacts[immagineAttuale].avatar">
+                                    <span> {{contacts[immagineAttuale].name}} <br>  <span class="informazioni">{{contacts[immagineAttuale].scrittura}}</span></span>
+                                </a>
+                                <div class="collapse  navbar-collapse justify-content-end" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-paperclip"></i></a>
+                                        </li>
+                                        <div class="dropdown me-5">
+                                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                              <li><a class="dropdown-item" href="#" @click="deleteMessage(immagineAttuale)">elimina messaggi</a></li>
+                                              <li><a class="dropdown-item" href="#" @click="deleteChat(immagineAttuale)">elimina chat</a></li>
+                                            </ul>
+                                          </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                   </div>
+                   <div class="col-12">
+                        <div id="messaggi">
+                            <!-- comparsa messaggi nella chat alla persona a cui stai scrivendo -->
+                            <div v-for="messaggi in contacts[immagineAttuale].messages ">
+                                    <span v-if="messaggi.status === 'sent'" class="messaggi-mandati">
+                                            {{messaggi.message}}
+                                        <div class="time">
+                                            {{messaggi.time}}
+                                        </div>
+                                    </span>
+                                    <span v-else class="messaggi-ricevuti" >
+                                          {{messaggi.message}}
+                                        <div class="time">
+                                            {{messaggi.time}}
+                                        </div>
+                                    </span>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="col-12">
+                        <div id="space-writing"> <!--barra per inviare i messaggi-->
+                            <i class="fa-regular fa-face-smile"></i>
+                            <input type="text" v-model="messaggio" @keyup.enter="invioMessaggio" placeholder="scrivi un messaggio">
+                            <div v-if="messaggio === ''">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                            <div v-else @click="invioMessaggio">
+                                <i class="fa-solid fa-plane"></i>
+                            </div>
+                            
+                        </div>
+                   </div>
                 </div>
-                
-            </div>
+           </div>
         </div>
-
-        
     </div>
+
+    <!-- link script bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <!-- link javascript -->
     <script src="JS/index.js"></script>
 </body>
 </html>
 
-<!--  chiedere cosa  faccia regexp chiedere se va bene la cosa della lista con display aggiungere la caratteristica che la persona che è selezzionata abbia lo sfondo grigio guardare se si riesce a fare solo tramite css -->
+<!-- chiedere suggerimenti per quanto riguarda al click della persona si colora il background -->
+<!--  chiedere cosa  faccia regexp  -->
 <!-- chiedere se per il messaggio sta scrivendo ecc va bene sovvrascrivere la proprieta o bisogna creare un oggetto con dentro le risposte  -->
 <!-- guardare il problema che da alla eliminazione dell ultima chat dell'array -->
+<!-- chiedere se va bene usare let o const dentro elle funzioni dei methods  -->
+<!-- chiedere se length da problemi  in riga 83 -->
+<!-- chiedere chiarimenti sul punto dove aggiunge una persona l'utente come predisporlo ( cioè devo creare un pusante che crea una finestra e inserisci te in dato ?) -->
+
+
+
+

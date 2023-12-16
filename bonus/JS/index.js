@@ -1,6 +1,7 @@
 
 const {createApp}=Vue;
 
+
 const { DateTime }= luxon;
 
 createApp({
@@ -215,7 +216,7 @@ createApp({
         },
         autocomplete(nomeRicerca){
 
-           let elementi= document.getElementsByClassName("card")
+           let elementi= document.getElementsByClassName("cards")
             for (let i = 0; i < this.contacts.length; i++) {
                 // const reg = new RegExp(nomeRicerca);
                 if (this.contacts[i].name.match(nomeRicerca) ) {

@@ -1,24 +1,8 @@
-/* stili genrali */
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
+
 /* cclasse per centrare in altzza i tag contenenti i dati delle persone */
 .centratura{
     display: flex;
     align-items: center;
-}
-
-#proprietario, #persona-chatting{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#proprietario,#persona-chatting {
-    height: 60px;
-    background-color:#eaeaea;
 }
 
 img{
@@ -28,38 +12,23 @@ img{
     margin-right: 10px;
 }
 
-#app{
-    width: 90%;
-    margin: auto;
-}
-/* sfondo per testo sotto dati delle persone */
-.bg-messaggio, #data{
+/* sfondo per testo dentro ai li in displayoverflow  */
+.informazioni{
     color: rgba(0, 0, 0, 0.432);
     font-size: 13px;
 }
-/* caratteristiche per i (i) di font awesome */
-#persona-chatting i, #proprietario i{
-    color: #b0b0b0;
-    margin:0 5px;
+
+.card{
+    background-color: #8edafc; 
 }
 
-#messaggi , #contatti-persone ul {
-    overflow-y:scroll;
+.cards:hover{
+    background-color: lightgray;
 }
-/* caratteristiche contenitore */
-#app{
-    display: flex;
-}
-/* caratteristiche rubrica */
-#rubrica{
-    width: 300px;
-    height: 100vh;
-}
-/* caratteristica tag notifica */
-#notifica{
-    background-color: #8edafc;
-    height: 70px;
-    padding: 10px;
+
+.display-overflow{
+    height: calc(100vh - 180px);
+    overflow-y: scroll;
 }
 
 #notifica-disabilitata{
@@ -72,38 +41,17 @@ img{
     color: #9fdffb;
 }
 
-#ricerca-contatto input{
-    width: 90%;
-    margin: 3px 5%;
-    padding: 3px;
-    
-}
-
-#contatti-persone ul {
-    height: calc(100vh - 162px);
-}
-
 li>span{
-    border-top: 1px solid rgba(0, 0, 0, 0.547);
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
 }
-/* caratteristiche chat */
-#chat{
-    flex-grow: 1;
-    height: 100vh;
-}
-/* caratteristiche tag persona-chatting */
-#persona-chatting{
-    border-left: 1px solid rgba(0, 0, 0, 0.499);
-}
+
 /* caratteristiche tag messaggi  */
 #messaggi{
     background-image: url(../img/8DYndB.webp);
     background-size: contain;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 126px);
+    overflow-y: scroll;
 }
 
 .messaggi-mandati,.messaggi-ricevuti{
@@ -147,11 +95,16 @@ li>span{
     width: 70%;
     padding: 5px;
 }
-
+/* classe per js */
 .scompari{
     display: none;
 }
 
-.active:hover{
-    background-color: lightslategray;
+/* classe per rimuovere caratteristiche da bootstrap */
+.dropdown-toggle::after{
+    content: none;
+}
+
+nav i{
+    color: #b1b1b1;
 }
