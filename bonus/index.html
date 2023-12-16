@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- link ajax per api -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- link css -->
@@ -73,10 +75,10 @@
                     <i class="fa-solid fa-folder"></i>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                     <div id="menu-scelta">
-                       <div @click="deleteMessage">
+                       <div @click="deleteMessage(immagineAttuale)">
                             elimina messaggi
                        </div>
-                       <div @click="deleteChat">
+                       <div @click="deleteChat(immagineAttuale)">
                         elimina chat
                        </div>
                     </div>
@@ -111,6 +113,8 @@
                 
             </div>
         </div>
+
+        
     </div>
     <!-- link javascript -->
     <script src="JS/index.js"></script>

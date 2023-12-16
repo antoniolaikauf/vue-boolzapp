@@ -1,5 +1,6 @@
 
 const {createApp}=Vue;
+
 const { DateTime }= luxon;
 
 createApp({
@@ -236,14 +237,14 @@ createApp({
            return now.c.hour +":" + now.c.minute
         },
         // funzione per eliminare la chat desiderata
-        deleteMessage(){
-             this.contacts[this.immagineAttuale].messages.splice(0)
+        deleteMessage(index){
+             this.contacts[index].messages.splice(0)
         },
         // funzione per eliminare il contatto desiderato
-        deleteChat(){
+        deleteChat(index){
             // console.log(this.immagineAttuale);
             // console.log(this.contacts[this.immagineAttuale]);
-            this.contacts.splice(this.immagineAttuale,1)
+            this.contacts.splice(index,1)
             // console.log(this.contacts);
         }
     },
