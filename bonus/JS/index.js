@@ -187,19 +187,23 @@ createApp({
         invioMessaggio(){
             this.personaSingola =this.contacts[this.immagineAttuale].messages
 
-
             const now = DateTime.now();
 
             // console.log(now.c.hour);
             // console.log(now.c.minute);
-
-            // invio messaggio dentro array messages
-           this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":now.c.hour +":" + now.c.minute })
-           this.messaggio=""
-        //    messaggio di risposta
-           setTimeout(() => {
-            this.personaSingola.push({"message":"ok","status":"received", "time":now.c.hour +":" + now.c.minute})
-           }, 1000);
+            
+            // controllo se utente ha scritto qualcosa
+            if (this.messaggio==="") {
+                alert("scrivi qualcosa")
+            }else{
+                // invio messaggio dentro array messages
+                this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":now.c.hour +":" + now.c.minute })
+                this.messaggio=""
+                        //    messaggio di risposta
+                setTimeout(() => {
+                    this.personaSingola.push({"message":"ok","status":"received", "time":now.c.hour +":" + now.c.minute})
+                }, 1000);
+            }
         },
         autocomplete(nomeRicerca){
            let elementi= document.getElementsByClassName("card")
