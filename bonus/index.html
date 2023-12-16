@@ -48,15 +48,15 @@
                 <ul>  
                     <!-- persone a cui hai scritto -->
                     <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="card" >
-                       <span v-if="contact.visible" class="active" >
-                         <div class="centratura">
-                            <img :src="contact.avatar" alt="contacts[i]" >  
-                            <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
-                          </div>
-                          <div id="data">
-                           12:00
-                          </div>
-                       </span>
+                        <span v-if="contact.visible=== true" class="active">
+                            <div class="centratura">
+                               <img :src="contact.avatar" alt="contacts[i]" >  
+                               <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
+                             </div>
+                             <div id="data">
+                              12:00
+                             </div>
+                        </span>
                     </li>
                 </ul>
             </div>
@@ -71,7 +71,15 @@
                 <div>
                     <i class="fa-solid fa-circle-notch"></i>
                     <i class="fa-solid fa-folder"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"  @click="scelta"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div id="menu-scelta">
+                       <div @click="deleteMessage">
+                            elimina messaggi
+                       </div>
+                       <div @click="deleteChat">
+                        elimina chat
+                       </div>
+                    </div>
                 </div>
             </div>
             <div id="messaggi">
@@ -111,3 +119,4 @@
 
 <!--  chiedere cosa  faccia regexp chiedere se va bene la cosa della lista con display aggiungere la caratteristica che la persona che è selezzionata abbia lo sfondo grigio guardare se si riesce a fare solo tramite css -->
 <!-- chiedere se per il messaggio sta scrivendo ecc va bene sovvrascrivere la proprieta o bisogna creare un oggetto con dentro le risposte  -->
+<!-- guardare il problema che da alla eliminazione dell ultima chat dell'array -->

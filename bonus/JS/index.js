@@ -235,10 +235,17 @@ createApp({
 
            return now.c.hour +":" + now.c.minute
         },
-        scelta(){
-            console.log("hdijdsi");
+        // funzione per eliminare la chat desiderata
+        deleteMessage(){
+             this.contacts[this.immagineAttuale].messages.splice(0)
+        },
+        // funzione per eliminare il contatto desiderato
+        deleteChat(){
+            // console.log(this.immagineAttuale);
+            // console.log(this.contacts[this.immagineAttuale]);
+            this.contacts.splice(this.immagineAttuale,1)
+            // console.log(this.contacts);
         }
-
     },
     mounted(){
         // cambio del valore dentro contacts data con scritto solo ore e minuti
@@ -254,7 +261,6 @@ createApp({
                     // console.log(personaSingola[y]);
                     }
             }
-
     },
 
 }).mount("#app")
@@ -265,3 +271,7 @@ createApp({
 // console.log(hddu[hddu.length-1]);
 
 // this.lastItems=this.personaSingola[this.messages.length].message
+
+
+// delete this.contacts[this.immagineAttuale].messages
+// delete cancella la proprietà di un oggetto
