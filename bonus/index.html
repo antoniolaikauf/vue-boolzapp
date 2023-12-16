@@ -22,7 +22,7 @@
         <div id="rubrica">
             <div id="proprietario"> <!--dati proprietario account-->
                 <div class="centratura">
-                    <img src="img/th (8).jpg" alt="immagine proprietario account">
+                    <img src="img/th (9).jpg" alt="immagine proprietario account">
                     <span>sofia</span>
                 </div>
                 <div>
@@ -54,7 +54,7 @@
                             <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
                           </div>
                           <div id="data">
-                               12:00
+                           12:00
                           </div>
                        </span>
                     </li>
@@ -66,12 +66,12 @@
             <div id="persona-chatting"> <!--riferimento alla persona a cui stai scrivendo-->
                 <div class="centratura">
                     <img :src="contacts[immagineAttuale].avatar" alt="contacts[immagineAttuale].avatar">
-                    <span> {{contacts[immagineAttuale].name}} <br>  <span class="bg-messaggio">ultimo messaggio inviato 12:00</span></span>
+                    <span> {{contacts[immagineAttuale].name}} <br>  <span class="bg-messaggio"></span>  {{contacts[immagineAttuale].scrittura}}</span>
                 </div>
                 <div>
                     <i class="fa-solid fa-circle-notch"></i>
                     <i class="fa-solid fa-folder"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"  @click="scelta"></i>
                 </div>
             </div>
             <div id="messaggi">
@@ -110,3 +110,4 @@
 </html>
 
 <!--  chiedere cosa  faccia regexp chiedere se va bene la cosa della lista con display aggiungere la caratteristica che la persona che è selezzionata abbia lo sfondo grigio guardare se si riesce a fare solo tramite css -->
+<!-- chiedere se per il messaggio sta scrivendo ecc va bene sovvrascrivere la proprieta o bisogna creare un oggetto con dentro le risposte  -->

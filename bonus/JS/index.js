@@ -9,9 +9,6 @@ createApp({
             messaggio:"",
             ricerca:"",
             personaSingola:"",
-
-
-            classe:"red",
             // contatti dell'utente
             contacts: [
                 {
@@ -185,19 +182,17 @@ createApp({
         },
         // funzione per inviare un mesaggio e ottenere la risposta
         invioMessaggio(){
+
             this.personaSingola =this.contacts[this.immagineAttuale].messages
-
-            const now = DateTime.now();
-
-            // console.log(now.c.hour);
-            // console.log(now.c.minute);
 
             // controllo se utente ha scritto qualcosa
             if (this.messaggio==="") {
                 alert("scrivi qualcosa")
             }else{
+                // comparsa della notifica della scritta
+                this.contacts[this.immagineAttuale].scrittura="sta scrivendo"
                 // invio messaggio dentro array messages
-                this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":now.c.hour +":" + now.c.minute })
+                this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":this.calcoloTime() })
                 this.messaggio=""
                  //    messaggio di risposta
                 setTimeout(() => {
@@ -206,12 +201,19 @@ createApp({
                     .then((risposta)=>{
                        let question=risposta.data.setup
                        let answer=risposta.data.punchline
-                       this.personaSingola.push({"message": question + " " + answer,"status":"received", "time":now.c.hour +":" + now.c.minute})
+                       this.personaSingola.push({"message": question + " " + answer,"status":"received", "time":this.calcoloTime()})
+
+
+                       this.contacts[this.immagineAttuale].scrittura="online"
+                       setTimeout(() => {
+                         this.contacts[this.immagineAttuale].scrittura=this.calcoloTime()
+                       }, 2000);
                     })
                 }, 1000);
             }
         },
         autocomplete(nomeRicerca){
+
            let elementi= document.getElementsByClassName("card")
             for (let i = 0; i < this.contacts.length; i++) {
                 // const reg = new RegExp(nomeRicerca);
@@ -223,6 +225,18 @@ createApp({
                     elementi[i].classList.add("scompari")
                  }
             }
+        },
+        // funzione per prendere ora e minuti attuali
+        calcoloTime(){
+            const now = DateTime.now();
+
+            // console.log(now.c.hour);
+            // console.log(now.c.minute);
+
+           return now.c.hour +":" + now.c.minute
+        },
+        scelta(){
+            console.log("hdijdsi");
         }
 
     },
@@ -230,19 +244,16 @@ createApp({
         // cambio del valore dentro contacts data con scritto solo ore e minuti
              for (let i = 0; i < this.contacts.length; i++) {
                 let personaSingola=this.contacts[i].messages;
-                this.contacts[i].active=true
                 // console.log(this.contacts[i]);
                     for (let y = 0; y < personaSingola.length; y++) {
-                        // creazione della nuova chiave e messa dentro all'oggetto personaSingola
+                    // creazione della nuova chiave e messa dentro all'oggetto personaSingola
                     let now= personaSingola[y].date
                     let orarioInvio=now.substr(10 );
                     orarioInvio=orarioInvio.substr(0,6);
                     personaSingola[y].time=orarioInvio
                     // console.log(personaSingola[y]);
-
                     }
             }
-
 
     },
 
@@ -250,3 +261,7 @@ createApp({
 
 // Il metodo match() di JavaScript mi permette di cercare delle corrispondenze
 //  in una stringa tramite una espressione regolare.
+
+// console.log(hddu[hddu.length-1]);
+
+// this.lastItems=this.personaSingola[this.messages.length].message
