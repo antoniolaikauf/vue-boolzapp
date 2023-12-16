@@ -27,6 +27,11 @@ img{
     border-radius: 50px;
     margin-right: 10px;
 }
+
+#app{
+    width: 90%;
+    margin: auto;
+}
 /* sfondo per testo sotto dati delle persone */
 .bg-messaggio, #data{
     color: rgba(0, 0, 0, 0.432);
@@ -107,16 +112,16 @@ li>span{
     position: relative;
     border-radius: 10px;
     margin-top: 20px;
-    width: 350px;
+    width: 38%;
 }
 
 .messaggi-mandati{
-    left: 55%;
+    left: 50%;
     background-color:#d5f9ba;
 }
 
 .messaggi-ricevuti{
-    left: 5%;
+    left: 3%;
     background-color:white;
 }
 
@@ -145,4 +150,8 @@ li>span{
 
 .scompari{
     display: none;
+}
+
+.active:hover{
+    background-color: #9fdffb;
 }
