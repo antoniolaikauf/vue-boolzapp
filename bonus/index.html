@@ -92,7 +92,13 @@
             <div id="space-writing"> <!--barra per inviare i messaggi-->
                 <i class="fa-regular fa-face-smile"></i>
                 <input type="text" v-model="messaggio" @keyup.enter="invioMessaggio" placeholder="scrivi un messaggio">
-                <i class="fa-solid fa-microphone"></i>
+                <div v-if="messaggio === ''">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+                <div v-else @click="invioMessaggio">
+                    <i class="fa-solid fa-plane"></i>
+                </div>
+                
             </div>
         </div>
     </div>
