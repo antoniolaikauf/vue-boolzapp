@@ -9,6 +9,9 @@ createApp({
             messaggio:"",
             ricerca:"",
             personaSingola:"",
+
+
+            classe:"red",
             // contatti dell'utente
             contacts: [
                 {
@@ -217,7 +220,8 @@ createApp({
         // cambio del valore dentro contacts data con scritto solo ore e minuti
              for (let i = 0; i < this.contacts.length; i++) {
                 let personaSingola=this.contacts[i].messages;
-                // console.log(this.personaSingola);
+                this.contacts[i].active=true
+                // console.log(this.contacts[i]);
                     for (let y = 0; y < personaSingola.length; y++) {
                         // creazione della nuova chiave e messa dentro all'oggetto personaSingola
                     let now= personaSingola[y].date
