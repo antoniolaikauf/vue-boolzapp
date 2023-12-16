@@ -191,7 +191,7 @@ createApp({
 
             // console.log(now.c.hour);
             // console.log(now.c.minute);
-            
+
             // controllo se utente ha scritto qualcosa
             if (this.messaggio==="") {
                 alert("scrivi qualcosa")
@@ -199,9 +199,15 @@ createApp({
                 // invio messaggio dentro array messages
                 this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":now.c.hour +":" + now.c.minute })
                 this.messaggio=""
-                        //    messaggio di risposta
+                 //    messaggio di risposta
                 setTimeout(() => {
-                    this.personaSingola.push({"message":"ok","status":"received", "time":now.c.hour +":" + now.c.minute})
+                    // risposta presa da api
+                    axios.get("https://official-joke-api.appspot.com/random_joke")
+                    .then((risposta)=>{
+                       let question=risposta.data.setup
+                       let answer=risposta.data.punchline
+                       this.personaSingola.push({"message": question + " " + answer,"status":"received", "time":now.c.hour +":" + now.c.minute})
+                    })
                 }, 1000);
             }
         },
