@@ -153,5 +153,10 @@ li>span{
 }
 
 .active:hover{
-    background-color: lightslategray;
+    background-color:#e9ebeb;
+}
+
+
+.blu{
+    background-color:#e9ebeb;
 }

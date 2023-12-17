@@ -176,12 +176,19 @@ createApp({
                     ],
                 }
             ],
+            classe:"blu"
         }
     },
     methods:{
         // funzione per prendere l'i del contatto nel tag contatti persone
         visualizzazineMessaggi(index){
-            this.immagineAttuale=index 
+            this.immagineAttuale=index
+            // ciclo per risettare la proprieta a bg_display false 
+            this.contacts.forEach(element => {
+                element.bg_display=true
+            });
+            // cambio del valore della proprieta cosi che si veda il bg della chat selezionata 
+            this.contacts[this.immagineAttuale].bg_display=false
         },
         // funzione per inviare un mesaggio e ottenere la risposta
         invioMessaggio(){
@@ -220,7 +227,13 @@ createApp({
         // cambio del valore dentro contacts data con scritto solo ore e minuti
              for (let i = 0; i < this.contacts.length; i++) {
                 let personaSingola=this.contacts[i].messages;
-                this.contacts[i].active=true
+
+
+                this.contacts[i].bg_display=true
+
+                // console.log(this.contacts[i].bg_display);
+
+
                 // console.log(this.contacts[i]);
                     for (let y = 0; y < personaSingola.length; y++) {
                         // creazione della nuova chiave e messa dentro all'oggetto personaSingola
@@ -232,6 +245,8 @@ createApp({
 
                     }
             }
+            // ipostazione ch permette di far vedere i bg della chat evidenziata nella rubrica
+            this.contacts[this.immagineAttuale].bg_display=false
 
 
     },

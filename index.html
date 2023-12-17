@@ -46,7 +46,7 @@
                 <ul>  
                     <!-- persone a cui hai scritto -->
                     <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="card" >
-                       <span v-if="contact.visible" class="active" >
+                       <span v-if="contact.visible" class="active" :class="contact.bg_display ?'':classe">
                          <div class="centratura">
                             <img :src="contact.avatar" alt="contacts[i]" >  
                             <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
@@ -101,7 +101,6 @@
 </body>
 </html>
 
-<!-- chiedere suggerimenti per quanto riguarda al click della persona si colora il background -->
 <!--  chiedere cosa  faccia regexp  -->
 <!-- chiedere se per il messaggio sta scrivendo ecc va bene sovvrascrivere la proprieta o bisogna creare un oggetto con dentro le risposte  -->
 <!-- guardare il problema che da alla eliminazione dell ultima chat dell'array -->
