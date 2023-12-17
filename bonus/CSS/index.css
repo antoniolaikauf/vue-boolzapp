@@ -100,6 +100,10 @@ li>span{
     display: none;
 }
 
+.bg-li{
+    background-color:#e9ebeb;
+}
+
 /* classe per rimuovere caratteristiche da bootstrap */
 .dropdown-toggle::after{
     content: none;

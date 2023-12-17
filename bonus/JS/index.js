@@ -11,6 +11,7 @@ createApp({
             messaggio:"",
             ricerca:"",
             personaSingola:"",
+            classe:"bg-li",
             // contatti dell'utente
             contacts: [
                 {
@@ -180,7 +181,13 @@ createApp({
     methods:{
         // funzione per prendere l'i del contatto nel tag contatti persone
         visualizzazineMessaggi(index){
-            this.immagineAttuale=index 
+            this.immagineAttuale=index
+            // ciclo per risettare la proprieta a bg_display false 
+            this.contacts.forEach(element => {
+                element.bg_display=true
+            });
+            // cambio del valore della proprieta cosi che si veda il bg della chat selezionata 
+            this.contacts[this.immagineAttuale].bg_display=false
         },
         // funzione per inviare un mesaggio e ottenere la risposta
         invioMessaggio(){
@@ -254,6 +261,9 @@ createApp({
              for (let i = 0; i < this.contacts.length; i++) {
                 let personaSingola=this.contacts[i].messages;
                 // console.log(this.contacts[i]);
+
+                this.contacts[i].bg_display=true
+                
                     for (let y = 0; y < personaSingola.length; y++) {
                     // creazione della nuova chiave e messa dentro all'oggetto personaSingola
                     let now= personaSingola[y].date
@@ -263,6 +273,8 @@ createApp({
                     // console.log(personaSingola[y]);
                     }
             }
+            // ipostazione ch permette di far vedere i bg della chat evidenziata nella rubrica
+            this.contacts[this.immagineAttuale].bg_display=false
     },
 
 }).mount("#app")

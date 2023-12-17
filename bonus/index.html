@@ -73,7 +73,7 @@
                    <div class="display-overflow">
                         <div class="col-12">
                             <ul class="list-group">
-                                <li class="list-group-item cards rounded-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" >
+                                <li class="list-group-item cards rounded-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':classe">
                                     <span v-if="contact.visible=== true">
                                         <div class="centratura">
                                             <img :src="contact.avatar" alt="contacts[i]" >  
@@ -165,7 +165,6 @@
 </body>
 </html>
 
-<!-- chiedere suggerimenti per quanto riguarda al click della persona si colora il background -->
 <!--  chiedere cosa  faccia regexp  -->
 <!-- chiedere se per il messaggio sta scrivendo ecc va bene sovvrascrivere la proprieta o bisogna creare un oggetto con dentro le risposte  -->
 <!-- guardare il problema che da alla eliminazione dell ultima chat dell'array -->

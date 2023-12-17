@@ -9,9 +9,7 @@ createApp({
             messaggio:"",
             ricerca:"",
             personaSingola:"",
-
-
-            classe:"red",
+            classe:"bg-li",
             // contatti dell'utente
             contacts: [
                 {
@@ -176,7 +174,6 @@ createApp({
                     ],
                 }
             ],
-            classe:"blu"
         }
     },
     methods:{
@@ -228,7 +225,7 @@ createApp({
              for (let i = 0; i < this.contacts.length; i++) {
                 let personaSingola=this.contacts[i].messages;
 
-
+                // aggiunta nuova classe per bg chat
                 this.contacts[i].bg_display=true
 
                 // console.log(this.contacts[i].bg_display);
