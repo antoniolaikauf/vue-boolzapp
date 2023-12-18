@@ -76,7 +76,7 @@
                    <div class="display-overflow">
                         <div class="col-12">
                             <ul class="list-group">
-                                <li class="list-group-item rounded-0 p-0 border-0" v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':classe"  :class="contact.visible ?'':classe1">
+                                <li class="list-group-item rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':classe"  :class="contact.visible ?'':classe1">
                                     <span v-if="contact.visible=== true">
                                         <div class="centratura">
                                             <img :src="contact.avatar" alt="contacts[i]" >  
@@ -171,7 +171,6 @@
 <!--  chiedere cosa  faccia regexp  -->
 <!-- chiedere se per il messaggio sta scrivendo ecc va bene sovvrascrivere la proprieta o bisogna creare un oggetto con dentro le risposte  -->
 <!-- guardare il problema che da alla eliminazione dell ultima chat dell'array -->
-<!-- chiedere se va bene usare let o const dentro elle funzioni dei methods  -->
 <!-- chiedere se length da problemi  in riga 83 -->
 <!-- chiedere chiarimenti sul punto dove aggiunge una persona l'utente come predisporlo ( cioè devo creare un pusante che crea una finestra e inserisci te in dato ?) -->
 

@@ -33,7 +33,7 @@ img{
     background-color: #8edafc; 
 }
 
-.cards:hover{
+.display-overflow li:hover{
     background-color: lightgray;
 }
 
