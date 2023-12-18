@@ -42,8 +42,10 @@ img{
 }
 
 li>span{
+    border-top: 1px solid rgba(0, 0, 0, 0.547);
     display: flex;
     justify-content: space-between;
+    padding: 10px;
 }
 
 /* caratteristiche tag messaggi  */
@@ -112,3 +114,5 @@ li>span{
 nav i{
     color: #b1b1b1;
 }
+
+
