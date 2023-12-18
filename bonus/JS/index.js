@@ -262,6 +262,7 @@ createApp({
         },
         aggiungiUtente(){
             this.contacts.push({"name":this.nomeNuovoUtente,avatar:"img/th (2).jpg",visible: true,messages:[{date: "", message: '', status: "",}]})
+            this.nomeNuovoUtente="";
         }
     },
     mounted(){
