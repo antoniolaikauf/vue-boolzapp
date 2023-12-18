@@ -1,4 +1,15 @@
+/* sfondo della pagina */
+body{
+    background-color: #d6dbd6;
+}
 
+#bg-color{
+    width: 100%;
+    height: 100px;
+    background-color: #009688;
+    position: absolute;
+    z-index: -1;
+}
 /* cclasse per centrare in altzza i tag contenenti i dati delle persone */
 .centratura{
     display: flex;
