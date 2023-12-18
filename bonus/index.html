@@ -56,7 +56,6 @@
                                                 </div>
                                                 <div class="offcanvas-body">
                                                     <input type="text" placeholder="inserire nome" v-model="nomeNuovoUtente">
-                                                    <input type="text" placeholder="inserire link immagine" v-model="immaginePersona">
                                                     <button @click="aggiungiUtente">
                                                         aggiungi persona
                                                     </button>
@@ -92,7 +91,7 @@
                    <div class="display-overflow">
                         <div class="col-12">
                             <ul class="list-group">
-                                <li class="list-group-item rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':classe"  :class="contact.visible ?'':classe1">
+                                <li class="list-group-item rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':classe" >
                                     <span v-if="contact.visible=== true">
                                         <div class="centratura">
                                             <img :src="contact.avatar" alt="contacts[i]" >  
@@ -180,7 +179,6 @@
 </body>
 </html>
 
-<!--  chiedere cosa  faccia regexp  -->
 <!-- guardare il problema che da alla eliminazione dell ultima chat dell'array -->
 
 

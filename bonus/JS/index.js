@@ -18,7 +18,6 @@ createApp({
 
             // valori per aggiungere nuovo utente
             nomeNuovoUtente:"",
-            immaginePersona:"",
             // dati inseriti dentro array contacts
             now: DateTime.now(),
             question:"",
@@ -236,7 +235,6 @@ createApp({
         autocomplete(nomeRicerca){
 
             for (let i = 0; i < this.contacts.length; i++) {
-                // const reg = new RegExp(nomeRicerca);
                 if (this.contacts[i].name.match(nomeRicerca) ) {
                     this.contacts[i].visible=true
                  }else{
@@ -259,13 +257,11 @@ createApp({
         },
         // funzione per eliminare il contatto desiderato
         deleteChat(index){
-            // console.log(this.immagineAttuale);
-            // console.log(this.contacts[this.immagineAttuale]);
             this.contacts.splice(index,1)
             // console.log(this.contacts);
         },
         aggiungiUtente(){
-            this.contacts.push({"name":this.nomeNuovoUtente,avatar:this.immaginePersona,visible: true,messages:[{date: "", message: '', status: "",}]})
+            this.contacts.push({"name":this.nomeNuovoUtente,avatar:"img/th (2).jpg",visible: true,messages:[{date: "", message: '', status: "",}]})
         }
     },
     mounted(){
@@ -294,10 +290,6 @@ createApp({
 
 // Il metodo match() di JavaScript mi permette di cercare delle corrispondenze
 //  in una stringa tramite una espressione regolare.
-
-// console.log(hddu[hddu.length-1]);
-
-// this.lastItems=this.personaSingola[this.messages.length].message
 
 
 // delete this.contacts[this.immagineAttuale].messages
