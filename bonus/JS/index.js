@@ -285,8 +285,19 @@ createApp({
 
                 }
             }
+            
+            do {
+                this.welcomeMessage=parseInt(prompt(`per scegliere la chat digita un numero tra 0 e ${this.contacts.length -1}`))
+                console.log(this.welcomeMessage);
+            } while (this.welcomeMessage > this.contacts.length);
+
+            this.immagineAttuale=this.welcomeMessage
             // ipostazione ch permette di far vedere i bg della chat evidenziata nella rubrica
             this.contacts[this.immagineAttuale].bg_display=false
+            
+
+            // this.contacts[0].name=this.welcomeMessage
+            // console.log(this.contacts[0].name);
     },
 
 }).mount("#app")
