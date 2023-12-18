@@ -10,6 +10,7 @@ createApp({
             ricerca:"",
             personaSingola:"",
             now:"",
+            now: DateTime.now(),
             // classi css
             classe:"bg-li",
             classe1:"scompari",
@@ -195,7 +196,7 @@ createApp({
             this.personaSingola =this.contacts[this.immagineAttuale].messages
 
 
-            const now = DateTime.now();
+            this.now = DateTime.now();
 
             // console.log(now.c.hour);
             // console.log(now.c.minute);

@@ -11,6 +11,7 @@ createApp({
             messaggio:"",
             ricerca:"",
             personaSingola:"",
+            now: DateTime.now(),
             classe:"bg-li",
             classe1:"scompari",
             // contatti dell'utente
@@ -235,12 +236,12 @@ createApp({
         },
         // funzione per prendere ora e minuti attuali
         calcoloTime(){
-            const now = DateTime.now();
+             this.now = DateTime.now();
 
             // console.log(now.c.hour);
             // console.log(now.c.minute);
 
-           return now.c.hour +":" + now.c.minute
+           return this.now.c.hour +":" + this.now.c.minute
         },
         // funzione per eliminare la chat desiderata
         deleteMessage(index){
