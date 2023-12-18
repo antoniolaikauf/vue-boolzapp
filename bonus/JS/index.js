@@ -266,7 +266,6 @@ createApp({
         },
         aggiungiUtente(){
             this.contacts.push({"name":this.nomeNuovoUtente,avatar:this.immaginePersona,visible: true,messages:[{date: "", message: '', status: "",}]})
-            console.log(this.contacts[8]);
         }
     },
     mounted(){
@@ -279,7 +278,7 @@ createApp({
                 
                 for (let y = 0; y < this.personaSingola.length; y++) {
                     // creazione della nuova chiave e messa dentro all'oggetto personaSingola
-                 this.now= this.personaSingola[y].date
+                this.now= this.personaSingola[y].date
                 this.now=this.now.substr(10 );
                 this.now=this.now.substr(0,6);
                 this.personaSingola[y].time=this.now
