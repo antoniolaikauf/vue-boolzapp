@@ -274,6 +274,7 @@ createApp({
             this.contacts.push({"name":this.nomeNuovoUtente,avatar:"img/th (2).jpg",visible: true,messages:[{date: "", message: '', status: "",}]})
             this.nomeNuovoUtente="";
         },
+        // funzione per incrementare sfondo
         incrementoFont(){
             if (this.fontProgetto === false) {
                 this.fontProgetto = true;
@@ -281,6 +282,7 @@ createApp({
                 this.fontProgetto=false
             }
         },
+        // funzione per cambiare il colore dello sfondo
         cambioSfondo(){
             if (this.sfondoProgetto === false) {
                 this.sfondoProgetto = true;
