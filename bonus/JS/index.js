@@ -257,19 +257,20 @@ createApp({
     mounted(){
         // cambio del valore dentro contacts data con scritto solo ore e minuti
              for (let i = 0; i < this.contacts.length; i++) {
-                let personaSingola=this.contacts[i].messages;
+                this.personaSingola=this.contacts[i].messages;
                 // console.log(this.contacts[i]);
 
                 this.contacts[i].bg_display=true
                 
-                    for (let y = 0; y < personaSingola.length; y++) {
+                for (let y = 0; y < this.personaSingola.length; y++) {
                     // creazione della nuova chiave e messa dentro all'oggetto personaSingola
-                    let now= personaSingola[y].date
-                    let orarioInvio=now.substr(10 );
-                    orarioInvio=orarioInvio.substr(0,6);
-                    personaSingola[y].time=orarioInvio
-                    // console.log(personaSingola[y]);
-                    }
+                 this.now= this.personaSingola[y].date
+                this.now=this.now.substr(10 );
+                this.now=this.now.substr(0,6);
+                this.personaSingola[y].time=this.now
+                // console.log(personaSingola[y]);
+
+                }
             }
             // ipostazione ch permette di far vedere i bg della chat evidenziata nella rubrica
             this.contacts[this.immagineAttuale].bg_display=false
