@@ -10,6 +10,7 @@ createApp({
             ricerca:"",
             personaSingola:"",
             classe:"bg-li",
+            classe1:"scompari",
             // contatti dell'utente
             contacts: [
                 {
@@ -206,15 +207,12 @@ createApp({
            }, 1000);
         },
         autocomplete(nomeRicerca){
-           let elementi= document.getElementsByClassName("card")
             for (let i = 0; i < this.contacts.length; i++) {
                 // const reg = new RegExp(nomeRicerca);
                 if (this.contacts[i].name.match(nomeRicerca) ) {
                     this.contacts[i].visible=true
-                   elementi[i].classList.remove("scompari")
                  }else{
                     this.contacts[i].visible=false
-                    elementi[i].classList.add("scompari")
                  }
             }
         }

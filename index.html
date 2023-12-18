@@ -45,7 +45,7 @@
 
                 <ul>  
                     <!-- persone a cui hai scritto -->
-                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" class="card" >
+                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.visible ?'':classe1">
                        <span v-if="contact.visible" class="active" :class="contact.bg_display ?'':classe">
                          <div class="centratura">
                             <img :src="contact.avatar" alt="contacts[i]" >  
