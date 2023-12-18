@@ -30,7 +30,19 @@ img{
 
 #app{
     width: 90%;
-    margin: auto;
+    position: absolute;
+    left: 5%;
+}
+
+#bg-color{
+    width: 100%;
+    height: 100px;
+    background-color: #009688;
+    position: absolute;
+}
+
+body{
+    background-color: #d6dbd6;
 }
 /* sfondo per testo sotto dati delle persone */
 .bg-messaggio, #data{
@@ -49,6 +61,7 @@ img{
 /* caratteristiche contenitore */
 #app{
     display: flex;
+    background-color: white;
 }
 /* caratteristiche rubrica */
 #rubrica{
@@ -155,7 +168,6 @@ li>span{
 .active:hover{
     background-color:#e9ebeb;
 }
-
 
 .bg-li{
     background-color:#e9ebeb;

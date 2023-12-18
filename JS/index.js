@@ -202,11 +202,11 @@ createApp({
             // console.log(now.c.minute);
 
             // invio messaggio dentro array messages
-           this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":now.c.hour +":" + now.c.minute })
+           this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":this.now.c.hour +":" + this.now.c.minute })
            this.messaggio=""
         //    messaggio di risposta
            setTimeout(() => {
-            this.personaSingola.push({"message":"ok","status":"received", "time":now.c.hour +":" + now.c.minute})
+            this.personaSingola.push({"message":"ok","status":"received", "time":this.now.c.hour +":" + this.now.c.minute})
            }, 1000);
         },
         autocomplete(nomeRicerca){
