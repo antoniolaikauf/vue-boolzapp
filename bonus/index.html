@@ -56,8 +56,8 @@
                                                 </div>
                                                 <div class="offcanvas-body">
                                                     <input type="text" placeholder="inserire nome" v-model="nomeNuovoUtente">
-                                                    <input type="text" placeholder="inserire il cognome" v-model="cognomeNuovoUtente">
-                                                    <button @keyup="aggiungiUtente">
+                                                    <input type="text" placeholder="inserire link immagine" v-model="immaginePersona">
+                                                    <button @click="aggiungiUtente">
                                                         aggiungi persona
                                                     </button>
                                                 </div>
@@ -84,7 +84,7 @@
                         </div>
                    </div>
                    <div class="col-12">
-                        <div class="input-group p-1 bg-light">
+                        <div class="input-group p-1 bg-light"> 
                             <button class="btn bg-white border border-1 border-end-0" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
                             <input placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyup="autocomplete(ricerca)" type="text" class="form-control " aria-label="Example text with button addon" aria-describedby="button-addon1">
                         </div>
@@ -96,7 +96,7 @@
                                     <span v-if="contact.visible=== true">
                                         <div class="centratura">
                                             <img :src="contact.avatar" alt="contacts[i]" >  
-                                            <div> {{contact.name}} <br><span class="informazioni">ultimo messaggio inviato: {{contact.messages[contact.messages.length-1].message}}</span></div>
+                                            <div> {{contact.name}} <br><span class="informazioni" v-if="contact.messages.length !== 0">ultimo messaggio inviato:  {{contact.messages[contact.messages.length-1].message}} </span></div>
                                         </div>
                                     </span>
                                 </li>
@@ -129,7 +129,7 @@
                                               <li><a class="dropdown-item" href="#" @click="deleteMessage(immagineAttuale)">elimina messaggi</a></li>
                                               <li><a class="dropdown-item" href="#" @click="deleteChat(immagineAttuale)">elimina chat</a></li>
                                             </ul>
-                                          </div>
+                                        </div>
                                     </ul>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                             {{messaggi.time}}
                                         </div>
                                     </span>
-                                    <span v-else class="messaggi-ricevuti" >
+                                    <span v-else class="messaggi-ricevuti" v-if="messaggi.message !== '' ">
                                           {{messaggi.message}}
                                         <div class="time">
                                             {{messaggi.time}}
@@ -181,10 +181,7 @@
 </html>
 
 <!--  chiedere cosa  faccia regexp  -->
-<!-- chiedere se per il messaggio sta scrivendo ecc va bene sovvrascrivere la proprieta o bisogna creare un oggetto con dentro le risposte  -->
 <!-- guardare il problema che da alla eliminazione dell ultima chat dell'array -->
-<!-- chiedere chiarimenti sul punto dove aggiunge una persona l'utente come predisporlo ( cioè devo creare un pusante che crea una finestra e inserisci te in dato ?) -->
-
 
 
 

@@ -17,8 +17,8 @@ createApp({
             classe1:"scompari",
 
             // valori per aggiungere nuovo utente
-            nomeNuovo:"nomeNuovoUtente",
-            cognomeNuovo:"cognomeNuovoUtente",
+            nomeNuovoUtente:"",
+            immaginePersona:"",
             // dati inseriti dentro array contacts
             now: DateTime.now(),
             question:"",
@@ -265,7 +265,8 @@ createApp({
             // console.log(this.contacts);
         },
         aggiungiUtente(){
-            
+            this.contacts.push({"name":this.nomeNuovoUtente,avatar:this.immaginePersona,visible: true,messages:[{date: "", message: '', status: "",}]})
+            console.log(this.contacts[8]);
         }
     },
     mounted(){
