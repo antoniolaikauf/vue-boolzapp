@@ -8,12 +8,19 @@ createApp({
     data(){
         return{
             immagineAttuale:0,
-            messaggio:"",
+            // v-model valori
             ricerca:"",
+            messaggio:"",
             personaSingola:"",
-            now: DateTime.now(),
+            // classi css
             classe:"bg-li",
             classe1:"scompari",
+
+            // dati inseriti dentro array contacts
+            now: DateTime.now(),
+            question:"",
+            answer:"",
+
             // contatti dell'utente
             contacts: [
                 {
@@ -210,9 +217,9 @@ createApp({
                     // risposta presa da api
                     axios.get("https://official-joke-api.appspot.com/random_joke")
                     .then((risposta)=>{
-                       let question=risposta.data.setup
-                       let answer=risposta.data.punchline
-                       this.personaSingola.push({"message": question + " " + answer,"status":"received", "time":this.calcoloTime()})
+                       this.question=risposta.data.setup
+                       this.answer=risposta.data.punchline
+                       this.personaSingola.push({"message": this.question + " " + this.answer,"status":"received", "time":this.calcoloTime()})
 
 
                        this.contacts[this.immagineAttuale].scrittura="online"
