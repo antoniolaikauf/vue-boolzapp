@@ -10,6 +10,11 @@ body{
     position: absolute;
     z-index: -1;
 }
+/* componenti che non si devono ingrandire  */
+#space-writing input, .container i{
+    font-size: 13px;
+}
+
 /* cclasse per centrare in altzza i tag contenenti i dati delle persone */
 .centratura{
     display: flex;
@@ -40,7 +45,7 @@ img{
 .display-overflow{
     height: calc(100vh - 180px);
     overflow-y: scroll;
-    background-color: white;
+    /* background-color: white; */
 }
 
 #notifica-disabilitata{
@@ -118,6 +123,18 @@ li>span{
     background-color:#e9ebeb;
 }
 
+.font{
+    font-size: 15px;
+}
+
+.bg-pagina{
+    background-color:black;
+}
+
+.bg-normal{
+    background-color: #eaeaea;
+}
+
 /* classe per rimuovere caratteristiche da bootstrap */
 .dropdown-toggle::after{
     content: none;
@@ -126,5 +143,3 @@ li>span{
 nav i{
     color: #b1b1b1;
 }
-
-

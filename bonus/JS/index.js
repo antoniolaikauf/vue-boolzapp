@@ -12,9 +12,17 @@ createApp({
             ricerca:"",
             messaggio:"",
             personaSingola:"",
+            welcomeMessage:"",
+
+
+
+            fontProgetto:false,
+            sfondoProgetto:false,
             // classi css
             classe:"bg-li",
             classe1:"scompari",
+            classe2:"font",
+            classe3:"bg-pagina",
 
             // valori per aggiungere nuovo utente
             nomeNuovoUtente:"",
@@ -265,9 +273,25 @@ createApp({
         aggiungiUtente(){
             this.contacts.push({"name":this.nomeNuovoUtente,avatar:"img/th (2).jpg",visible: true,messages:[{date: "", message: '', status: "",}]})
             this.nomeNuovoUtente="";
+        },
+        incrementoFont(){
+            if (this.fontProgetto === false) {
+                this.fontProgetto = true;
+            }else{
+                this.fontProgetto=false
+            }
+        },
+        cambioSfondo(){
+            if (this.sfondoProgetto === false) {
+                this.sfondoProgetto = true;
+            }else{
+                this.sfondoProgetto=false
+            }
+           
         }
     },
     mounted(){
+
         // cambio del valore dentro contacts data con scritto solo ore e minuti
              for (let i = 0; i < this.contacts.length; i++) {
                 this.personaSingola=this.contacts[i].messages;
@@ -286,16 +310,16 @@ createApp({
                 }
             }
             
+            // ciclo per richiedere la scelta della chat
             do {
                 this.welcomeMessage=parseInt(prompt(`per scegliere la chat digita un numero tra 0 e ${this.contacts.length -1}`))
                 console.log(this.welcomeMessage);
-            } while (this.welcomeMessage > this.contacts.length);
+            } while (this.welcomeMessage > this.contacts.length || isNaN(this.welcomeMessage) );
 
             this.immagineAttuale=this.welcomeMessage
             // ipostazione ch permette di far vedere i bg della chat evidenziata nella rubrica
             this.contacts[this.immagineAttuale].bg_display=false
             
-
             // this.contacts[0].name=this.welcomeMessage
             // console.log(this.contacts[0].name);
     },
@@ -308,3 +332,11 @@ createApp({
 
 // delete this.contacts[this.immagineAttuale].messages
 // delete cancella la proprietà di un oggetto
+
+
+
+// riga 109  bg-light 34 86
+
+
+// inNaN nell'if richiede tutte le volte il promp finche non ti inserirà un numero essendo che con ilparseint 
+// ti deve ritornare un numero l'utente e basta se volesse scrivere una stringa uscirebbe NaN nella console 
