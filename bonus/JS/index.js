@@ -16,6 +16,9 @@ createApp({
             classe:"bg-li",
             classe1:"scompari",
 
+            // valori per aggiungere nuovo utente
+            nomeNuovo:"nomeNuovoUtente",
+            cognomeNuovo:"cognomeNuovoUtente",
             // dati inseriti dentro array contacts
             now: DateTime.now(),
             question:"",
@@ -260,6 +263,9 @@ createApp({
             // console.log(this.contacts[this.immagineAttuale]);
             this.contacts.splice(index,1)
             // console.log(this.contacts);
+        },
+        aggiungiUtente(){
+            
         }
     },
     mounted(){

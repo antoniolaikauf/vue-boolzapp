@@ -46,7 +46,23 @@
                                             <a class="nav-link" href="#"><i class="fa-solid fa-folder"></i></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">  <i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                            <a class="nav-link" href="#">  
+                                                <button class="btn p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+
+                                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                                <div class="offcanvas-header">
+                                                    <h5 id="offcanvasRightLabel">inserire nuovo utente</h5>
+                                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                </div>
+                                                <div class="offcanvas-body">
+                                                    <input type="text" placeholder="inserire nome" v-model="nomeNuovoUtente">
+                                                    <input type="text" placeholder="inserire il cognome" v-model="cognomeNuovoUtente">
+                                                    <button @keyup="aggiungiUtente">
+                                                        aggiungi persona
+                                                    </button>
+                                                </div>
+                                                </div>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -167,7 +183,6 @@
 <!--  chiedere cosa  faccia regexp  -->
 <!-- chiedere se per il messaggio sta scrivendo ecc va bene sovvrascrivere la proprieta o bisogna creare un oggetto con dentro le risposte  -->
 <!-- guardare il problema che da alla eliminazione dell ultima chat dell'array -->
-<!-- chiedere se length da problemi  in riga 83 -->
 <!-- chiedere chiarimenti sul punto dove aggiunge una persona l'utente come predisporlo ( cioè devo creare un pusante che crea una finestra e inserisci te in dato ?) -->
 
 
