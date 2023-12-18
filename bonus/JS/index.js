@@ -252,12 +252,14 @@ createApp({
            return this.now.c.hour +":" + this.now.c.minute
         },
         // funzione per eliminare la chat desiderata
-        deleteMessage(index){
-             this.contacts[index].messages.splice(0)
+        deleteMessage(){
+            // console.log(this.immagineAttuale);
+             this.contacts[this.immagineAttuale].messages.splice(0)
         },
         // funzione per eliminare il contatto desiderato
-        deleteChat(index){
-            this.contacts.splice(index,1)
+        deleteChat(){
+            // console.log(this.immagineAttuale);
+            this.contacts.splice(this.immagineAttuale,1)
             // console.log(this.contacts);
         },
         aggiungiUtente(){
