@@ -80,11 +80,7 @@
                                     <span v-if="contact.visible=== true">
                                         <div class="centratura">
                                             <img :src="contact.avatar" alt="contacts[i]" >  
-                                            <div> {{contact.name}} <br><span class="informazioni">ultimo messaggio inviato</span></div>
-                                        </div>
-                                        <div class="informazioni">
-                                           <!-- {{contact.messages[messages.length].message}} -->
-                                           12:00
+                                            <div> {{contact.name}} <br><span class="informazioni">ultimo messaggio inviato: {{contact.messages[contact.messages.length-1].message}}</span></div>
                                         </div>
                                     </span>
                                 </li>
