@@ -271,8 +271,9 @@ createApp({
             // console.log(this.contacts);
         },
         aggiungiUtente(){
-            this.contacts.push({"name":this.nomeNuovoUtente,avatar:"img/th (2).jpg",visible: true,messages:[{date: "", message: '', status: "",}]})
+            this.contacts.push({"name":this.nomeNuovoUtente,avatar:"img/th (2).jpg",visible: true,bg_display:true,messages:[{date: "", message: '', status: "",}]})
             this.nomeNuovoUtente="";
+            console.log(this.contacts);
         },
         // funzione per incrementare sfondo
         incrementoFont(){
