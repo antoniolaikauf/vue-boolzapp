@@ -16,9 +16,6 @@ createApp({
             // dati pe cambiare sfondo e font
             fontProgetto:false,
             sfondoProgetto:false,
-            // classi css
-            size_font:"font",
-
             // valori per aggiungere nuovo utente
             nomeNuovoUtente:"",
             // dati inseriti dentro array contacts
