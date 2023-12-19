@@ -1,4 +1,4 @@
-/* sfondo della pagina */
+/* sfondo della pagina e caratteristiche generali */
 body{
     background-color: #d6dbd6;
 }
@@ -14,11 +14,14 @@ body{
     background-color: white;
     color: black;
 }
+
+#messaggi::-webkit-scrollbar,.display-overflow::-webkit-scrollbar {
+    display: none;
+}
 /* componenti che non si devono ingrandire  */
-#space-writing input, .container i{
+#space-writing input, .container i, .informazioni{
     font-size: 13px;
 }
-
 /* cclasse per centrare in altzza i tag contenenti i dati delle persone */
 .centratura{
     display: flex;
@@ -31,23 +34,9 @@ img{
     border-radius: 50px;
     margin-right: 10px;
 }
-
 /* sfondo per testo dentro ai li in displayoverflow  */
-.informazioni{
-    font-size: 13px;
-}
-
 .card{
     background-color: #8edafc; 
-}
-
-.display-overflow li:hover{
-    background-color: lightgray;
-}
-
-.display-overflow{
-    height: calc(100vh - 180px);
-    overflow-y: scroll;
 }
 
 #notifica-disabilitata{
@@ -60,6 +49,15 @@ img{
     color: #9fdffb;
 }
 
+.display-overflow li:hover{
+    background-color: lightgray;
+}
+
+.display-overflow{
+    height: calc(100vh - 180px);
+    overflow-y: scroll;
+}
+
 li>span{
     border-top: 1px solid rgba(0, 0, 0, 0.547);
     display: flex;
@@ -67,16 +65,12 @@ li>span{
     padding: 10px;
 }
 
-/* caratteristiche tag messaggi  */
+/* caratteristiche tag messaggi nella schermarta */
 #messaggi{
     background-image: url(../img/8DYndB.webp);
     background-size: contain;
     height: calc(100vh - 126px);
     overflow-y: scroll;
-}
-
-#messaggi::-webkit-scrollbar,.display-overflow::-webkit-scrollbar {
-    display: none;
 }
 
 .messaggi-mandati,.messaggi-ricevuti{
