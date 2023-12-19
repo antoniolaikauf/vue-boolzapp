@@ -270,10 +270,14 @@ createApp({
             this.contacts.splice(this.immagineAttuale,1)
             // console.log(this.contacts);
         },
+        // funzione per aggiungere nuovo utente
         aggiungiUtente(){
-            this.contacts.push({"name":this.nomeNuovoUtente,avatar:"img/th (2).jpg",visible: true,bg_display:true,messages:[{date: "", message: '', status: "",}]})
-            this.nomeNuovoUtente="";
-            console.log(this.contacts);
+            if (this.nomeNuovoUtente===""  ){
+                alert("devi scrivere un nome")
+            }else{
+                this.contacts.push({"name":this.nomeNuovoUtente,avatar:"img/th (2).jpg",visible: true,bg_display:true,messages:[{date: "", message: '', status: "",}]})
+                this.nomeNuovoUtente="";
+            }
         },
         // funzione per incrementare sfondo
         incrementoFont(){
@@ -342,4 +346,4 @@ createApp({
 
 
 // inNaN nell'if richiede tutte le volte il promp finche non ti inserirà un numero essendo che con ilparseint 
-// ti deve ritornare un numero l'utente e basta se volesse scrivere una stringa uscirebbe NaN nella console 
+// ti deve ritornare un numero l'utente e basta se volesse scrivere una stringa uscirebbe NaN nella console
