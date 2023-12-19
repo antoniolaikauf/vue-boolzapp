@@ -9,7 +9,6 @@ createApp({
             messaggio:"",
             ricerca:"",
             personaSingola:"",
-            now:"",
             now: DateTime.now(),
             // classi css
             bg_contatto:"bg-li",
