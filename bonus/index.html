@@ -22,17 +22,17 @@
 
 
     <div id="app" >
-        <div :class="sfondoProgetto === false ?'':classe3">
+        <div  :class="sfondoProgetto === false ?'':classe4">
             <div id="bg-color">
            
             </div>
             <div class="container" :class=" fontProgetto === false ? classe2:'' "  >
                 <!-- div con dentro tutti i contatti a cui si è scritto -->
-               <div class="row">
+               <div class="row" :class="sfondoProgetto === false ?'':classe3">
                     <div class="col-4 p-0">
                         <!-- nav bar della rubrica dell'accaount della persona -->
                        <div class="col-12">
-                            <nav class="navbar navbar-expand-sm navbar-ligh bg-light ">
+                            <nav class="navbar navbar-expand-sm navbar-ligh  ">
                                 <div class="container-fluid">
                                     <img src="img/th (9).jpg" alt="">
                                     <span>
@@ -84,7 +84,7 @@
                             </div>
                        </div>
                        <div class="col-12">
-                            <div class="input-group p-1 bg-light"> 
+                            <div class="input-group p-1 "> 
                                 <button class="btn bg-white border border-1 border-end-0" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 <input placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyup="autocomplete(ricerca)" type="text" class="form-control " aria-label="Example text with button addon" aria-describedby="button-addon1">
                             </div>
@@ -92,7 +92,7 @@
                        <div class="display-overflow">
                             <div class="col-12">
                                 <ul class="list-group">
-                                    <li class="list-group-item rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':classe"  >
+                                    <li class=" rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':classe">
                                         <span v-if="contact.visible=== true">
                                             <div class="centratura">
                                                 <img :src="contact.avatar" alt="contacts[i]" >  
@@ -107,9 +107,9 @@
                     <!-- inizio chat con persona  -->
                     <div class="col-8 p-0"> 
                         <div class="col-12 border-start border-dark">
-                            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                            <nav class="navbar navbar-expand-sm navbar-light ">
                                 <div class="container-fluid">
-                                    <a class="navbar-brand py-0 d-flex fs-0" href="#">
+                                    <a class="navbar-brand py-0 d-flex fs-0" href="#" >
                                         <img :src="contacts[immagineAttuale].avatar" alt="contacts[immagineAttuale].avatar">
                                         <span> {{contacts[immagineAttuale].name}} <br>  <span class="informazioni">{{contacts[immagineAttuale].scrittura}}</span></span>
                                     </a>
@@ -166,7 +166,6 @@
                                 <div v-else @click="invioMessaggio">
                                     <i class="fa-solid fa-plane"></i>
                                 </div>
-                                
                             </div>
                        </div>
                     </div>

@@ -13,16 +13,16 @@ createApp({
             messaggio:"",
             personaSingola:"",
             welcomeMessage:"",
-
-
-
+            // dati pe cambiare sfondo e font
             fontProgetto:false,
             sfondoProgetto:false,
             // classi css
             classe:"bg-li",
             classe1:"scompari",
             classe2:"font",
+            // classi per sfondo dark
             classe3:"bg-pagina",
+            classe4:"bg-sfondo",
 
             // valori per aggiungere nuovo utente
             nomeNuovoUtente:"",
@@ -338,7 +338,7 @@ createApp({
 
 
 
-// riga 109  bg-light 34 86
+// riga 110  bg-light 35 87
 
 
 // inNaN nell'if richiede tutte le volte il promp finche non ti inserirà un numero essendo che con ilparseint 

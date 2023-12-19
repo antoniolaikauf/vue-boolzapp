@@ -10,6 +10,10 @@ body{
     position: absolute;
     z-index: -1;
 }
+#app .container{
+    background-color: white;
+    color: black;
+}
 /* componenti che non si devono ingrandire  */
 #space-writing input, .container i{
     font-size: 13px;
@@ -30,7 +34,6 @@ img{
 
 /* sfondo per testo dentro ai li in displayoverflow  */
 .informazioni{
-    color: rgba(0, 0, 0, 0.432);
     font-size: 13px;
 }
 
@@ -45,7 +48,6 @@ img{
 .display-overflow{
     height: calc(100vh - 180px);
     overflow-y: scroll;
-    /* background-color: white; */
 }
 
 #notifica-disabilitata{
@@ -73,6 +75,10 @@ li>span{
     overflow-y: scroll;
 }
 
+#messaggi::-webkit-scrollbar,.display-overflow::-webkit-scrollbar {
+    display: none;
+}
+
 .messaggi-mandati,.messaggi-ricevuti{
     padding: 10px;
     display: inline-block;
@@ -80,6 +86,7 @@ li>span{
     border-radius: 10px;
     margin-top: 20px;
     width: 38%;
+    color: black;
 }
 
 .messaggi-mandati{
@@ -100,7 +107,6 @@ li>span{
 /* caratteristiche tag space writing ( per inviare il messaggio ) */
 #space-writing{
     height: 60px;
-    background-color: #eaeaea;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -126,16 +132,17 @@ li>span{
 .font{
     font-size: 15px;
 }
-
+/* classi per js sfondo */
 .bg-pagina{
-    background-color:black;
+    background-color: #000000cf;
+    color: white;
 }
 
-.bg-normal{
-    background-color: #eaeaea;
+.bg-sfondo{
+    background-color: black;
 }
 
-/* classe per rimuovere caratteristiche da bootstrap */
+/* classe per rimuovere o modificare caratteristiche da bootstrap */
 .dropdown-toggle::after{
     content: none;
 }
@@ -146,4 +153,12 @@ nav i{
 
 .navbar-brand{
     font-size: unset;
+}
+
+.navbar-light .navbar-brand{
+    color: unset;
+}
+
+.list-group-item{
+    color: unset;
 }
