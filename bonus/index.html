@@ -92,8 +92,8 @@
                        <div class="display-overflow">
                             <div class="col-12">
                                 <ul class="list-group">
-                                    <li class=" d-block rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':bg_contatto">
-                                        <span v-if="contact.visible=== true">
+                                    <li class=" rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="{ scompari:contact.visible===false, bgli:contact.bg_display=== false }">
+                                        <span class="active">
                                             <div class="centratura">
                                                 <img :src="contact.avatar" alt="contacts[i]" >  
                                                 <div> {{contact.name}} <br><span class="informazioni" v-if="contact.messages.length !== 0">ultimo messaggio inviato:  {{contact.messages[contact.messages.length-1].message}} </span></div>
@@ -141,7 +141,7 @@
                             <div id="messaggi">
                                 <!-- comparsa messaggi nella chat alla persona a cui stai scrivendo -->
                                 <div v-for="messaggi in contacts[immagineCardAttuale].messages ">
-                                    <span :class="messaggi.status === 'sent' ? classeMesMandati:classeMesRicevuti">
+                                    <span :class="{messaggiMandati:messaggi.status==='sent', messaggiRicevuti:messaggi.status==='received'}">
                                         {{messaggi.message}}
                                        <div class="time">
                                         {{messaggi.time}}

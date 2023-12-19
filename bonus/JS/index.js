@@ -17,10 +17,7 @@ createApp({
             fontProgetto:false,
             sfondoProgetto:false,
             // classi css
-            bg_contatto:"bg-li",
             size_font:"font",
-            classeMesMandati:"messaggi-mandati",
-            classeMesRicevuti:"messaggi-ricevuti",
             // classi per sfondo dark
             bg_container_app:"bg-pagina",
             bg_sfondo:"bg-sfondo",
