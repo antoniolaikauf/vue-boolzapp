@@ -119,7 +119,7 @@ li>span{
     height: calc(100vh - 120px);
 }
 
-.messaggi-mandati,.messaggi-ricevuti{
+.messaggiMandati,.messaggiRicevuti{
     padding: 10px;
     display: inline-block;
     position: relative;
@@ -128,12 +128,12 @@ li>span{
     width: 38%;
 }
 
-.messaggi-mandati{
+.messaggiMandati{
     left: 50%;
     background-color:#d5f9ba;
 }
 
-.messaggi-ricevuti{
+.messaggiRicevuti{
     left: 3%;
     background-color:white;
 }
@@ -171,4 +171,9 @@ li>span{
 
 .bg-li{
     background-color:#e9ebeb;
+}
+
+
+.activee{
+    background-color: red;
 }
