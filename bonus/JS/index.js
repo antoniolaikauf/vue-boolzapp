@@ -18,9 +18,6 @@ createApp({
             sfondoProgetto:false,
             // classi css
             size_font:"font",
-            // classi per sfondo dark
-            bg_container_app:"bg-pagina",
-            bg_sfondo:"bg-sfondo",
 
             // valori per aggiungere nuovo utente
             nomeNuovoUtente:"",

@@ -22,13 +22,13 @@
 
 
     <div id="app" >
-        <div  :class="sfondoProgetto === false ?'':bg_sfondo ">
+        <div  :class="{bg_sfondo:sfondoProgetto}">
             <div id="bg-color">
            
             </div>
-            <div class="container" :class=" fontProgetto === false ? size_font:'' "  >
+            <div class="container" :class="{font:fontProgetto===false}">
                 <!-- div con dentro tutti i contatti a cui si è scritto -->
-               <div class="row" :class="sfondoProgetto === false ?'':bg_container_app">
+               <div class="row" :class="{bg_pagina:sfondoProgetto}">
                     <div class="col-4 p-0">
                         <!-- nav bar della rubrica dell'accaount della persona -->
                        <div class="col-12">

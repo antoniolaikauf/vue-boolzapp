@@ -127,12 +127,12 @@ li>span{
     font-size: 15px;
 }
 /* classi per js sfondo */
-.bg-pagina{
+.bg_pagina{
     background-color: #000000cf;
     color: white;
 }
 
-.bg-sfondo{
+.bg_sfondo{
     background-color: black;
 }
 
