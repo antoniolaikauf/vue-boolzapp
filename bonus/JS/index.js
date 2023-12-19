@@ -7,7 +7,7 @@ const { DateTime }= luxon;
 createApp({
     data(){
         return{
-            immagineAttuale:0,
+            immagineCardAttuale:0,
             // v-model valori
             ricerca:"",
             messaggio:"",
@@ -17,14 +17,13 @@ createApp({
             fontProgetto:false,
             sfondoProgetto:false,
             // classi css
-            classe:"bg-li",
-            classe1:"scompari",
-            classe2:"font",
+            bg_contatto:"bg-li",
+            size_font:"font",
             classeMesMandati:"messaggi-mandati",
             classeMesRicevuti:"messaggi-ricevuti",
             // classi per sfondo dark
-            classe3:"bg-pagina",
-            classe4:"bg-sfondo",
+            bg_container_app:"bg-pagina",
+            bg_sfondo:"bg-sfondo",
 
             // valori per aggiungere nuovo utente
             nomeNuovoUtente:"",
@@ -202,25 +201,25 @@ createApp({
     methods:{
         // funzione per prendere l'i del contatto nel tag contatti persone
         visualizzazineMessaggi(index){
-            this.immagineAttuale=index
+            this.immagineCardAttuale=index
             // ciclo per risettare la proprieta a bg_display false 
             this.contacts.forEach(element => {
                 element.bg_display=true
             });
             // cambio del valore della proprieta cosi che si veda il bg della chat selezionata 
-            this.contacts[this.immagineAttuale].bg_display=false
+            this.contacts[this.immagineCardAttuale].bg_display=false
         },
         // funzione per inviare un mesaggio e ottenere la risposta
         invioMessaggio(){
 
-            this.personaSingola =this.contacts[this.immagineAttuale].messages
+            this.personaSingola =this.contacts[this.immagineCardAttuale].messages
 
             // controllo se utente ha scritto qualcosa
             if (this.messaggio==="") {
                 alert("scrivi qualcosa")
             }else{
                 // comparsa della notifica della scritta
-                this.contacts[this.immagineAttuale].scrittura="sta scrivendo"
+                this.contacts[this.immagineCardAttuale].scrittura="sta scrivendo"
                 // invio messaggio dentro array messages
                 this.personaSingola.push({"message":this.messaggio,"status":"sent", "time":this.calcoloTime() })
                 this.messaggio=""
@@ -234,9 +233,9 @@ createApp({
                        this.personaSingola.push({"message": this.question + " " + this.answer,"status":"received", "time":this.calcoloTime()})
 
 
-                       this.contacts[this.immagineAttuale].scrittura="online"
+                       this.contacts[this.immagineCardAttuale].scrittura="online"
                        setTimeout(() => {
-                         this.contacts[this.immagineAttuale].scrittura=this.calcoloTime()
+                         this.contacts[this.immagineCardAttuale].scrittura=this.calcoloTime()
                        }, 2000);
                     })
                 }, 1000);
@@ -263,13 +262,13 @@ createApp({
         },
         // funzione per eliminare la chat desiderata
         deleteMessage(){
-            // console.log(this.immagineAttuale);
-             this.contacts[this.immagineAttuale].messages.splice(0)
+            // console.log(this.immagineCardAttuale);
+             this.contacts[this.immagineCardAttuale].messages.splice(0)
         },
         // funzione per eliminare il contatto desiderato
         deleteChat(){
-            // console.log(this.immagineAttuale);
-            this.contacts.splice(this.immagineAttuale,1)
+            // console.log(this.immagineCardAttuale);
+            this.contacts.splice(this.immagineCardAttuale,1)
             // console.log(this.contacts);
         },
         // funzione per aggiungere nuovo utente
@@ -325,9 +324,9 @@ createApp({
                 console.log(this.welcomeMessage);
             } while (this.welcomeMessage > this.contacts.length || isNaN(this.welcomeMessage) );
 
-            this.immagineAttuale=this.welcomeMessage
+            this.immagineCardAttuale=this.welcomeMessage
             // ipostazione ch permette di far vedere i bg della chat evidenziata nella rubrica
-            this.contacts[this.immagineAttuale].bg_display=false
+            this.contacts[this.immagineCardAttuale].bg_display=false
             
             // this.contacts[0].name=this.welcomeMessage
             // console.log(this.contacts[0].name);

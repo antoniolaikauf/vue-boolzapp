@@ -12,14 +12,10 @@ createApp({
             now:"",
             now: DateTime.now(),
             // classi css
-            classe:"bg-li",
-            classe1:"scompari",
+            bg_contatto:"bg-li",
 
             classeMesMandati:"messaggiMandati",
             classeMesRicevuti:"messaggiRicevuti",
-
-            isActive: true,
-    hasError: false,
 
             // contatti dell'utente
             contacts: [

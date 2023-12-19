@@ -48,8 +48,8 @@
 
                 <ul>  
                     <!-- persone a cui hai scritto -->
-                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.visible ?'':classe1">
-                       <span v-if="contact.visible" class="active" :class="contact.bg_display ?'':classe">
+                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.visible ?'':bg_none">
+                       <span v-if="contact.visible" class="active">
                          <div class="centratura">
                             <img :src="contact.avatar" alt="contacts[i]" >  
                             <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>

@@ -22,13 +22,13 @@
 
 
     <div id="app" >
-        <div  :class="sfondoProgetto === false ?'':classe4">
+        <div  :class="sfondoProgetto === false ?'':bg_sfondo ">
             <div id="bg-color">
            
             </div>
-            <div class="container" :class=" fontProgetto === false ? classe2:'' "  >
+            <div class="container" :class=" fontProgetto === false ? size_font:'' "  >
                 <!-- div con dentro tutti i contatti a cui si è scritto -->
-               <div class="row" :class="sfondoProgetto === false ?'':classe3">
+               <div class="row" :class="sfondoProgetto === false ?'':bg_container_app">
                     <div class="col-4 p-0">
                         <!-- nav bar della rubrica dell'accaount della persona -->
                        <div class="col-12">
@@ -92,7 +92,7 @@
                        <div class="display-overflow">
                             <div class="col-12">
                                 <ul class="list-group">
-                                    <li class=" d-block rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':classe">
+                                    <li class=" d-block rounded-0 p-0 border-0 " v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.bg_display ?'':bg_contatto">
                                         <span v-if="contact.visible=== true">
                                             <div class="centratura">
                                                 <img :src="contact.avatar" alt="contacts[i]" >  
@@ -110,8 +110,8 @@
                             <nav class="navbar navbar-expand-sm navbar-light ">
                                 <div class="container-fluid">
                                     <a class="navbar-brand py-0 d-flex fs-0" href="#" >
-                                        <img :src="contacts[immagineAttuale].avatar" alt="contacts[immagineAttuale].avatar">
-                                        <span> {{contacts[immagineAttuale].name}} <br>  <span class="informazioni">{{contacts[immagineAttuale].scrittura}}</span></span>
+                                        <img :src="contacts[immagineCardAttuale].avatar" alt="contacts[immagineCardAttuale].avatar">
+                                        <span> {{contacts[immagineCardAttuale].name}} <br>  <span class="informazioni">{{contacts[immagineCardAttuale].scrittura}}</span></span>
                                     </a>
                                     <div class="collapse  navbar-collapse justify-content-end" id="navbarNavDropdown">
                                         <ul class="navbar-nav">
@@ -140,7 +140,7 @@
                        <div class="col-12">
                             <div id="messaggi">
                                 <!-- comparsa messaggi nella chat alla persona a cui stai scrivendo -->
-                                <div v-for="messaggi in contacts[immagineAttuale].messages ">
+                                <div v-for="messaggi in contacts[immagineCardAttuale].messages ">
                                     <span :class="messaggi.status === 'sent' ? classeMesMandati:classeMesRicevuti">
                                         {{messaggi.message}}
                                        <div class="time">
