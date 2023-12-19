@@ -20,6 +20,8 @@ createApp({
             classe:"bg-li",
             classe1:"scompari",
             classe2:"font",
+            classeMesMandati:"messaggi-mandati",
+            classeMesRicevuti:"messaggi-ricevuti",
             // classi per sfondo dark
             classe3:"bg-pagina",
             classe4:"bg-sfondo",

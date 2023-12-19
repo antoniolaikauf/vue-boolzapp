@@ -14,6 +14,10 @@ createApp({
             // classi css
             classe:"bg-li",
             classe1:"scompari",
+
+            classeMesMandati:"messaggi-mandati",
+            classeMesRicevuti:"messaggi-ricevuti",
+
             // contatti dell'utente
             contacts: [
                 {
