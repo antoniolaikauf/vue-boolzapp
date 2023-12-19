@@ -1,4 +1,3 @@
-
 const {createApp}=Vue;
 const { DateTime }= luxon;
 
@@ -10,11 +9,6 @@ createApp({
             ricerca:"",
             personaSingola:"",
             now: DateTime.now(),
-            // classi css
-            bg_contatto:"bg-li",
-
-            classeMesMandati:"messaggiMandati",
-            classeMesRicevuti:"messaggiRicevuti",
 
             // contatti dell'utente
             contacts: [

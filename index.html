@@ -48,8 +48,8 @@
 
                 <ul>  
                     <!-- persone a cui hai scritto -->
-                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)"  :class="contact.visible ?'':bg_none">
-                       <span v-if="contact.visible" class="active">
+                    <li v-for="(contact,i) in contacts" :key="i" @click="visualizzazineMessaggi(i)" :class="{ scompari:contact.visible===false, bgli:contact.bg_display=== false }" >
+                       <span class="active" >
                          <div class="centratura">
                             <img :src="contact.avatar" alt="contacts[i]" >  
                             <div> {{contact.name}} <br><span class="bg-messaggio">ultimo messaggio inviato</span></div>
@@ -78,7 +78,7 @@
             <div id="messaggi">
                 <!-- comparsa messaggi nella chat alla persona a cui stai scrivendo -->
                <div v-for="messaggi in contacts[immagineAttuale].messages ">
-                    <span :class="[messaggi.status==='sent' ?classeMesMandati  : classeMesRicevuti]" >
+                    <span :class="{messaggiMandati:messaggi.status==='sent', messaggiRicevuti:messaggi.status==='received'}" >
                         {{messaggi.message}}
                        <div class="time">
                         {{messaggi.time}}
@@ -97,5 +97,3 @@
     <script src="JS/index.js"></script>
 </body>
 </html>
-
-<!-- :class="[{messaggiMandati:'sent'},classeMesRicevuti]" -->
